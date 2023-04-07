@@ -14,16 +14,16 @@
               <label for="username">Username</label>
             </span>
             <span class="p-float-label">
-              <InputText
+              <Password
                 v-model="pass"
                 class="p-inputtext-lg"
-                id="password"
-                type="password"
+                inputId="password"
+                :feedback="false"
                 toggleMask
               />
               <label for="password">Password</label>
             </span>
-            <Button label="Submit" icon="pi pi-check" iconPos="right" />
+            <Button type="submit" label="Sign In" icon="pi pi-sign-in" iconPos="right" />
           </div>
         </form>
       </template>
