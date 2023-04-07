@@ -23,8 +23,8 @@
           <div
             class="flex flex-row justify-center items-center flex-wrap gap-5"
           >
-            <Button icon="pi pi-user-plus" label="Register" raised />
-            <Button icon="pi pi-sign-in" label="Login" outlined />
+            <Button icon="pi pi-user-plus" label="Sign Up" raised />
+            <Button icon="pi pi-sign-in" @click="this.$router.push({ name: 'login' })" label="Sign In" outlined />
           </div>
         </template>
       </Card>
