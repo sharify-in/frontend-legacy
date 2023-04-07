@@ -1,8 +1,8 @@
 <template>
   <div
-    class="flex flex-col justify-center items-center min-w-screen min-h-screen bg-[url('../svg/background.svg')] bg-no-repeat bg-cover"
+    class="flex flex-col justify-center items-center min-w-screen min-h-screen bg-[url('../svg/background.svg')] bg-no-repeat bg-cover p-5"
   >
-    <Card class="flex flex-col items-center w-1/5">
+    <Card class="flex flex-col items-center w-full md:w-96">
       <template #title>
         <p class="text-center">Sign In</p>
       </template>
