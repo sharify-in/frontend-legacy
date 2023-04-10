@@ -8,7 +8,7 @@
           <p class="text-center">Sign In</p>
         </template>
         <template #content>
-          <form action="">
+          <form>
             <div class="flex flex-col gap-6">
               <div class="p-inputgroup flex-1">
                 <span class="p-inputgroup-addon">
