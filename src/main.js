@@ -1,6 +1,7 @@
 import { createApp } from "vue";
 import { createPinia } from "pinia";
 import PrimeVue from "primevue/config";
+import "./axios"
 
 import VueAnimXyz from '@animxyz/vue3'
 import '@animxyz/core' // Import css here if you haven't elsewhere

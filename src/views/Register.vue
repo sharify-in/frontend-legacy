@@ -89,7 +89,7 @@ const formValues = reactive({
   email: "",
   password: "",
   invite: "",
-})
+});
 </script>
 
 <style scoped>
