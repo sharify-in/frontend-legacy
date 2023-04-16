@@ -18,7 +18,7 @@
                   <InputText
                     id="username"
                     class="p-inputtext-lg"
-                    v-model="value"
+                    v-model="form.username"
                   />
                   <label for="username">Username/Email</label>
                 </span>
@@ -29,7 +29,7 @@
                 </span>
                 <span class="p-float-label">
                   <Password
-                    v-model="pass"
+                    v-model="form.password"
                     class="p-inputtext-lg"
                     inputId="password"
                     :feedback="false"
@@ -54,7 +54,12 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { reactive } from "vue";
+
+const form = reactive({
+  username: "",
+  password: ""
+})
 
 const value = ref(null);
 const pass = ref(null);
