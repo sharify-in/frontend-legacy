@@ -2,15 +2,21 @@
   <div
     class="flex flex-col justify-center items-center bg-gradient-to-br from-indigo-500 to-blue-800 min-w-screen min-h-[60vh]"
   >
+
+  <div class="absolute top-5 inline-flex gap-3 uppercase">
+    <img src="/icon-2.png" alt="sharify.in" class="rounded-full w-32 mx-auto">
+    <a href="https://dsc.gg/sharify" class="block text-center self-center hover:underline">community</a>
+    <a href="" class="block text-center self-center hover:underline"></a>
+    <a href="#" class="block text-center self-center hover:underline">pricing</a>
+    <a href="#" class="block text-center self-center hover:underline">pricing</a>
+  </div>
+
+    
     <div
       class="flex md:flex-row flex-col justify-between items-center gap-5 flex-wrap w-full px-4 md:px-40"
     >
       <div class="flex flex-col gap-3 text-center md:text-left">
-        <h1 class="text-6xl font-semibold">Sharify.in</h1>
-        <p>
-          A free, fast and secure <br />
-          file sharing service made with heart & care.
-        </p>
+        <h1 class="text-6xl font-semibold">Share in a Snap, <br>Anywhere, Anytime!</h1>
         <Button
           class="!hidden md:!block"
           @click="this.$router.push({ name: 'register' })"
@@ -19,6 +25,7 @@
           raised
         />
       </div>
+      
       <Card>
         <template #content>
           <div
