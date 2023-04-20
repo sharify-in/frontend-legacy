@@ -7,9 +7,9 @@
     >
       <div class="flex flex-col gap-3 text-center md:text-left">
         <h1 class="text-6xl font-semibold">Sharify.in</h1>
-        <p>
-          A free, fast and secure <br />
-          file sharing service made with heart & care.
+        <p class="text-xl">
+          Share files in a Snap,<br />
+          Anywhere, at Anytime.
         </p>
         <Button
           class="!hidden md:!block"
