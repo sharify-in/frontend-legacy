@@ -56,13 +56,15 @@
 <script setup>
 import { reactive } from "vue";
 
+import { useToast } from "primevue/usetoast";
+const toast = useToast();
+
 const form = reactive({
   username: "",
-  password: ""
-})
+  password: "",
+});
 
-const value = ref(null);
-const pass = ref(null);
+
 </script>
 
 <style scoped>
