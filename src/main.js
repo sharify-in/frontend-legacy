@@ -1,8 +1,6 @@
 import { createApp } from "vue";
 import { createPinia } from "pinia";
 import PrimeVue from "primevue/config";
-import ToastService from 'primevue/toastservice';
-import "./axios"
 
 import VueAnimXyz from '@animxyz/vue3'
 import '@animxyz/core' // Import css here if you haven't elsewhere
@@ -20,7 +18,6 @@ import "./assets/theme.css";
 const app = createApp(App);
 
 app.use(createPinia());
-app.use(ToastService);
 app.use(VueAnimXyz)
 app.use(PrimeVue);
 app.use(router);

@@ -18,7 +18,7 @@
                   <InputText
                     id="username"
                     class="p-inputtext-lg"
-                    v-model="form.username"
+                    v-model="value"
                   />
                   <label for="username">Username/Email</label>
                 </span>
@@ -29,7 +29,7 @@
                 </span>
                 <span class="p-float-label">
                   <Password
-                    v-model="form.password"
+                    v-model="pass"
                     class="p-inputtext-lg"
                     inputId="password"
                     :feedback="false"
@@ -54,17 +54,10 @@
 </template>
 
 <script setup>
-import { reactive } from "vue";
+import { ref } from "vue";
 
-import { useToast } from "primevue/usetoast";
-const toast = useToast();
-
-const form = reactive({
-  username: "",
-  password: "",
-});
-
-
+const value = ref(null);
+const pass = ref(null);
 </script>
 
 <style scoped>

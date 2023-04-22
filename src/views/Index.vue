@@ -1,38 +1,35 @@
 <template>
+  <title>Sharify - Share in a Snap, Anywhere, Anytime!</title>
   <div
-    class="fixed top-0 flex flex-row justify-center items-center gap-5 w-full backdrop-blur-md p-5"
+    class="flex flex-col justify-center items-center bg-gradient-to-br from-indigo-500 to-blue-700 min-w-screen min-h-[60vh]"
   >
-    <a
-      href="https://dsc.gg/sharify"
-      class="text-center self-center hover:underline"
-    >
-      <i class="pi pi-discord"></i> Discord Server
-    </a>
-    <a href="#" class="text-center self-center hover:underline">
-      <i class="pi pi-dollar"></i> Pricing
-    </a>
+
+  <div class="fixed top-5 inline-flex gap-3 capitalize font-semibold bg-background select-none px-5 rounded-full border-2 border-accent border-opacity-20 z-50">
+    <img src="/transparent.png" alt="sharify.in" class="rounded-full w-12 mx-auto mr-0" draggable="false">
+    <h1 class="block text-center self-center uppercase mr-5 font-black text-accent">Sharify</h1>
+    
+    <a href="#" class="block text-center self-center hover:underline">products</a>
+    <a href="#about" class="block text-center self-center hover:underline">about us</a>
+    <a href="https://dsc.gg/sharify" class="block text-center self-center hover:underline">community</a>
+    <a href="/pricing" class="block text-center self-center hover:underline mr-3">pricing</a>
   </div>
-  <div
-    class="flex flex-col justify-center items-center bg-gradient-to-br from-indigo-500 to-blue-800 min-w-screen min-h-[60vh]"
-  >
+
+    
     <div
       class="flex md:flex-row flex-col justify-between items-center gap-5 flex-wrap w-full px-4 md:px-40"
     >
       <div class="flex flex-col gap-3 text-center md:text-left">
-        <h1 class="text-6xl font-semibold">Sharify.in</h1>
-        <p class="text-xl">
-          Share files in a Snap,<br />
-          Anywhere, at Anytime.
-        </p>
+        <h1 class="text-5xl font-semibold w-1/2">Share in a Snap, Anywhere, Anytime!</h1>
+        <p class="w-1/2">Share images, videos and files effortlessly and instantly. Enjoy quick and easy file sharing, anytime, anywhere. Simplify your file sharing experience with us!</p>
         <Button
-          class="!hidden md:!block"
+          class="!hidden md:!block w-80 animate__animated animate__fadeIn"
           @click="this.$router.push({ name: 'register' })"
-          label="Get started"
+          label="Get Started"
           severity="secondary"
           raised
         />
       </div>
-
+      
       <Card>
         <template #content>
           <div
@@ -55,41 +52,86 @@
       </Card>
     </div>
   </div>
+
   <div class="flex flex-col items-center pt-14">
-    <h1 class="text-4xl">Why us?</h1>
+    <h1 class="text-4xl font-semibold uppercase text-accent">From gamers to businesses</h1>
+    <p class="text-1xl text-dim-accent">No matter who you are, we have a file hosting solution tailored for your needs.</p>
+    <div
+      class="flex flex-col md:flex-row flex-wrap items-stretch justify-center gap-5 px-14 xl:px-60 mt-14"
+    >
+    <ImgFeature
+      image = "/cover-gaming.png"
+      title = "Gaming"
+      description = "Share your clips with your friends with a click of a button"
+    />
+    <ImgFeature
+      image = "/cover-work.png"
+      title = "Work"
+      description = "Bring your team together with centralized file storage"
+    />
+    <ImgFeature
+      image = "/cover-family.png"
+      title = "Family"
+      description = "Send images of the things you've done to your family"
+    />
+    </div>
+  </div>
+
+  <separator />
+
+  <div class="flex flex-col items-center pt-14">
+    <h1 class="text-4xl font-semibold uppercase text-accent">Setting the Bar Higher</h1>
+    <p class="text-1xl text-dim-accent">How do we set ourselves apart from typical file hosting platforms</p>
 
     <div
       class="flex flex-col md:flex-row flex-wrap items-stretch justify-center gap-5 px-14 xl:px-60 mt-14"
     >
-      <Feature
-        icon="pi pi-forward"
-        title="Fast"
-        description="Our file sharing service is meant to be lightning fast, allowing you to access your files quickly and easily from anywhere, at any time. "
+    <Feature
+        icon = "fa-solid fa-gears"
+        title = "Customization"
+        description = "With your customization features, You are able to change domain, embed and so much more"
       />
-      <Feature
-        icon="pi pi-server"
-        title="Reliable"
-        description="Downtime is not a problem for us, with 99.9% of uptime, you can always count on us to be up and running."
+    <Feature
+        icon = "fa-solid fa-credit-card"
+        title = "Affordable"
+        description = "Unlike traditional file hosts, we offer affordable pricing alongside our free solution"
       />
-      <Feature
-        icon="pi pi-eye-slash"
-        title="Privacy Focused"
-        description="We place a high value on your privacy and take it very seriously. We preserve your files and personal information with advanced security methods and never share your data with third parties."
-      />
-      <Feature
-        icon="pi pi-wallet"
-        title="Affordable"
-        description="Our flexible and affordable plans are designed to each user's needs and budget, making secure and efficient file sharing accessible to all."
-      />
-      <Feature
-        icon="pi pi-check-square"
-        title="Easy to use"
-        description="Our user-friendly interface simplifies and speeds up the process of uploading and sharing files. Join us today to discover how simple it is to share and collaborate on your files."
+    <Feature
+        icon = "fa-solid fa-link"
+        title = "Connections"
+        description = "Add your friends or colleagues to your friendlist to share your files with them in a matter of a few clicks"
       />
     </div>
   </div>
+
+  <separator />
+
 </template>
 
 <script setup>
 import Feature from "../components/Feature.vue";
+</script>
+
+
+<script>
+export default {
+  name: "HomeView",
+  data() {
+    return {
+      windowTop: 0
+    };
+  },
+  mounted() {
+    window.addEventListener("scroll", this.onScroll);
+  },
+  beforeDestroy() {
+    window.removeEventListener("scroll", this.onScroll);
+  },
+  methods: {
+    onScroll(e) {
+      this.windowTop = e.target.documentElement.scrollTop;
+      console.log(this.windowTop);
+    }
+  }
+};
 </script>
