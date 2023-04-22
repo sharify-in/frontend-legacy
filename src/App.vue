@@ -1,9 +1,13 @@
 <template>
-  <RouterView />
+  <Toast/>
+  <component :is="$route.meta.layout">
+    <RouterView />
+  </component>
 </template>
 
 <script setup>
 import { RouterView } from "vue-router";
+import Toast from 'primevue/toast';
 </script>
 
 <style>

@@ -1,17 +1,16 @@
 <template>
-  <title>Sharify - Share in a Snap, Anywhere, Anytime!</title>
   <div
     class="flex flex-col justify-center items-center bg-gradient-to-br from-indigo-500 to-blue-700 min-w-screen min-h-[60vh]"
   >
 
-  <div class="fixed top-5 inline-flex gap-3 capitalize font-semibold bg-background select-none px-5 rounded-full border-2 border-accent border-opacity-20 z-50">
+  <div class="fixed top-5 inline-flex gap-3 font-semibold bg-background select-none px-5 rounded-full border-2 border-accent border-opacity-20 z-50">
     <img src="/transparent.png" alt="sharify.in" class="rounded-full w-12 mx-auto mr-0" draggable="false">
     <h1 class="block text-center self-center uppercase mr-5 font-black text-accent">Sharify</h1>
     
-    <a href="#" class="block text-center self-center hover:underline">products</a>
-    <a href="#about" class="block text-center self-center hover:underline">about us</a>
-    <a href="https://dsc.gg/sharify" class="block text-center self-center hover:underline">community</a>
-    <a href="/pricing" class="block text-center self-center hover:underline mr-3">pricing</a>
+    <a href="#" class="text-center self-center hover:underline">Products</a>
+    <a href="#about" class="text-center self-center hover:underline">About Us</a>
+    <a href="https://dsc.gg/sharify" class="text-center self-center hover:underline">Community</a>
+    <a href="/pricing" class="text-center self-center hover:underline mr-3">Pricing</a>
   </div>
 
     
@@ -22,7 +21,7 @@
         <h1 class="text-5xl font-semibold w-1/2">Share in a Snap, Anywhere, Anytime!</h1>
         <p class="w-1/2">Share images, videos and files effortlessly and instantly. Enjoy quick and easy file sharing, anytime, anywhere. Simplify your file sharing experience with us!</p>
         <Button
-          class="!hidden md:!block w-80 animate__animated animate__fadeIn"
+          class="!hidden md:!block w-80"
           @click="this.$router.push({ name: 'register' })"
           label="Get Started"
           severity="secondary"

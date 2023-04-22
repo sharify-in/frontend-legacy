@@ -1,5 +1,5 @@
 <template>
-    <Card class="w-72  hover:scale-105 hover:shadow-xl hover:shadow-almost-black duration-150 delay-75">
+    <Card class="w-72 hover:scale-105 hover:shadow-xl hover:shadow-almost-black duration-150 delay-75">
         
         <template #title>
             <div class="flex flex-col">
