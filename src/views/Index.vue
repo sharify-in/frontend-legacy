@@ -105,7 +105,7 @@
 
   <Divider />
 
-  <div class="flex flex-col items-center pt-14 px-5">
+  <div class="flex flex-col items-center text-center pt-14 px-5">
     <h1 class="text-4xl font-semibold uppercase text-accent">
       Setting the Bar Higher
     </h1>
