@@ -1,9 +1,7 @@
 <template>
-  <div
-    class="flex flex-col justify-center items-center bg-gradient-to-br from-indigo-500 to-blue-700 min-w-screen min-h-[60vh]"
-  >
+  <nav class="xl:flex justify-center fixed top-5 w-full z-50 hidden">
     <div
-      class="fixed top-5 inline-flex gap-3 font-semibold bg-background select-none px-5 rounded-full border-2 border-accent border-opacity-20 z-50"
+      class="flex gap-3 w-fit justify-center font-semibold bg-background select-none px-5 rounded-full border-2 border-accent border-opacity-20"
     >
       <img
         src="/transparent.png"
@@ -12,7 +10,7 @@
         draggable="false"
       />
       <h1
-        class="block text-center self-center uppercase mr-5 font-black text-accent"
+        class="text-center self-center uppercase mr-5 font-black text-accent"
       >
         Sharify
       </h1>
@@ -30,21 +28,26 @@
         >Pricing</a
       >
     </div>
-
+  </nav>
+  <div
+    class="flex flex-col justify-center items-center bg-gradient-to-br from-indigo-500 to-blue-700 min-w-screen min-h-[60vh]"
+  >
     <div
-      class="flex md:flex-row flex-col justify-between items-center gap-5 flex-wrap w-full px-4 md:px-40"
+      class="flex xl:flex-row flex-col justify-around items-center gap-3 flex-wrap md:flex-nowrap w-full px-4 md:px-40"
     >
-      <div class="flex flex-col gap-3 text-center md:text-left">
-        <h1 class="text-5xl font-semibold w-1/2">
+      <div class="flex flex-col justify-center xl:items-start items-center gap-3 text-center xl:text-left">
+        <h1 class="xl:block hidden text-5xl font-semibold w-1/2">
           Share in a Snap, Anywhere, Anytime!
         </h1>
-        <p class="w-1/2">
+        <h1 class="xl:hidden block text-5xl font-semibold">Sharify.in</h1>
+        <p class="xl:block hidden w-1/2">
           Share images, videos and files effortlessly and instantly. Enjoy quick
           and easy file sharing, anytime, anywhere. Simplify your file sharing
           experience with us!
         </p>
+        <p class="xl:hidden block">Fast and secure file sharing service</p>
         <Button
-          class="!hidden md:!block w-80"
+          class="!hidden xl:!block w-80"
           @click="this.$router.push({ name: 'register' })"
           label="Get Started"
           severity="secondary"
@@ -55,13 +58,13 @@
       <Card>
         <template #content>
           <div
-            class="flex flex-row justify-center items-center flex-wrap gap-5"
+            class="flex flex-row justify-center items-center md:flex-nowrap flex-wrap gap-5"
           >
-            <Button @click="this.$router.push({ name: 'register' })" raised>
+            <Button class="shrink-0 grow" @click="this.$router.push({ name: 'register' })" raised>
               <font-awesome-icon :icon="['fas', 'user-plus']" />
               <span class="px-2">Sign Up</span>
             </Button>
-            <Button @click="this.$router.push({ name: 'login' })" outlined>
+            <Button class="shrink-0 grow" @click="this.$router.push({ name: 'login' })" outlined>
               <font-awesome-icon icon="fa-solid fa-arrow-right-to-bracket" />
               <span class="px-2">Sign In</span>
             </Button>
@@ -70,8 +73,8 @@
       </Card>
     </div>
   </div>
-
-  <div class="flex flex-col items-center pt-14">
+ 
+  <div class="flex flex-col items-center text-center pt-14 px-5">
     <h1 class="text-4xl font-semibold uppercase text-accent">
       From gamers to businesses
     </h1>
@@ -100,9 +103,9 @@
     </div>
   </div>
 
-  <separator />
+  <Divider />
 
-  <div class="flex flex-col items-center pt-14">
+  <div class="flex flex-col items-center pt-14 px-5">
     <h1 class="text-4xl font-semibold uppercase text-accent">
       Setting the Bar Higher
     </h1>
@@ -131,7 +134,7 @@
     </div>
   </div>
 
-  <separator />
+  <Divider />
 </template>
 
 <script setup>
