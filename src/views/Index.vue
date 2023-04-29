@@ -1,107 +1,161 @@
 <template>
-  <nav class="xl:flex justify-center fixed top-5 w-full z-50 hidden">
-    <div
-      class="flex gap-3 w-fit justify-center font-semibold bg-background select-none px-5 rounded-full border-2 border-accent border-opacity-20"
-    >
-      <img
-        src="/transparent.png"
-        alt="sharify.in"
-        class="rounded-full w-12 mx-auto mr-0"
-        draggable="false"
-      />
-      <h1
-        class="text-center self-center uppercase mr-5 font-black text-accent"
+  <XyzTransition appear xyz="fade duration delay-1.5">
+    <nav class="xl:flex justify-center fixed top-5 w-full z-50 hidden">
+      <div
+        class="flex gap-3 w-fit justify-center font-semibold bg-background select-none px-5 rounded-full border-2 border-accent border-opacity-20"
       >
-        Sharify
-      </h1>
+        <img
+          :src="TransparentLogo"
+          alt="sharify.in"
+          class="rounded-full w-12 mx-auto mr-0"
+          draggable="false"
+        />
+        <h1
+          class="text-center self-center uppercase mr-5 font-black text-accent"
+        >
+          Sharify
+        </h1>
 
-      <a href="#" class="text-center self-center hover:underline">Products</a>
-      <a href="#about" class="text-center self-center hover:underline"
-        >About Us</a
-      >
-      <a
-        href="https://dsc.gg/sharify"
-        class="text-center self-center hover:underline"
-        >Community</a
-      >
-      <a href="/pricing" class="text-center self-center hover:underline mr-3"
-        >Pricing</a
-      >
-    </div>
-  </nav>
+        <a href="#" class="text-center self-center hover:underline">Products</a>
+        <a href="#about" class="text-center self-center hover:underline"
+          >About Us</a
+        >
+        <a
+          href="https://dsc.gg/sharify"
+          class="text-center self-center hover:underline"
+          >Community</a
+        >
+        <a href="/pricing" class="text-center self-center hover:underline mr-3"
+          >Pricing</a
+        >
+      </div>
+    </nav>
+  </XyzTransition>
   <div
     class="flex flex-col justify-center items-center bg-gradient-to-br from-indigo-500 to-blue-700 min-w-screen min-h-[60vh]"
   >
     <div
       class="flex xl:flex-row flex-col justify-around items-center gap-3 flex-wrap md:flex-nowrap w-full px-4 md:px-40"
     >
-      <div class="flex flex-col justify-center xl:items-start items-center gap-3 text-center xl:text-left">
-        <h1 class="xl:block hidden text-5xl font-semibold w-1/2">
-          Share in a Snap, Anywhere, Anytime!
-        </h1>
-        <h1 class="xl:hidden block text-5xl font-semibold">Sharify.in</h1>
-        <p class="xl:block hidden w-1/2">
-          Share images, videos and files effortlessly and instantly. Enjoy quick
-          and easy file sharing, anytime, anywhere. Simplify your file sharing
-          experience with us!
-        </p>
-        <p class="xl:hidden block">Fast and secure file sharing service</p>
-        <Button
-          class="!hidden xl:!block w-80"
-          @click="this.$router.push({ name: 'register' })"
-          label="Get Started"
-          severity="secondary"
-          raised
+      <XyzTransition appear xyz="fade right-5 duration delay-1">
+        <div
+          class="flex flex-col justify-center xl:items-start items-center gap-3 text-center xl:text-left"
+        >
+          <h1 class="xl:block hidden text-5xl font-semibold w-1/2">
+            Share in a Snap, Anywhere, Anytime!
+          </h1>
+          <h1 class="xl:hidden block text-5xl font-semibold">Sharify.in</h1>
+          <p class="xl:block hidden w-1/2">
+            Share images, videos and files effortlessly and instantly. Enjoy
+            quick and easy file sharing, anytime, anywhere. Simplify your file
+            sharing experience with us!
+          </p>
+          <p class="xl:hidden block">Fast and secure file sharing service</p>
+          <XyzTransition appear xyz="fade right-5 duration delay-5">
+            <Button
+              class="!hidden xl:!block w-80"
+              @click="this.$router.push({ name: 'register' })"
+              label="Get Started"
+              severity="secondary"
+              raised
+            />
+          </XyzTransition>
+        </div>
+      </XyzTransition>
+      <XyzTransition appear xyz="fade right-5 duration delay-6">
+        <Card v-if="true">
+          <template #content>
+            <div
+              class="flex flex-row justify-center items-center md:flex-nowrap flex-wrap gap-5"
+            >
+              <Button
+                class="shrink-0 grow"
+                @click="this.$router.push({ name: 'register' })"
+                raised
+              >
+                <font-awesome-icon :icon="['fas', 'user-plus']" />
+                <span class="px-2">Sign Up</span>
+              </Button>
+              <Button
+                class="shrink-0 grow"
+                @click="this.$router.push({ name: 'login' })"
+                outlined
+              >
+                <font-awesome-icon icon="fa-solid fa-arrow-right-to-bracket" />
+                <span class="px-2">Sign In</span>
+              </Button>
+            </div>
+          </template>
+        </Card>
+      </XyzTransition>
+    </div>
+  </div>
+
+  <div class="px-14">
+    <!-- <div class="flex flex-col items-center text-center pt-14">
+      <h1 class="text-4xl font-semibold uppercase text-accent">
+        From gamers to businesses
+      </h1>
+      <p class="text-1xl text-dim-accent">
+        No matter who you are, we have a file hosting solution tailored for your
+        needs.
+      </p>
+      <div
+        class="flex flex-col md:flex-row flex-wrap items-stretch justify-center gap-5 px-14 xl:px-60 mt-14"
+      >
+        <ImgFeature
+          :image="CoverGaming"
+          title="Gaming"
+          description="Share your clips with your friends with a click of a button"
+        />
+        <ImgFeature
+          :image="CoverFamily"
+          title="Family"
+          description="Send images of the things you've done to your family"
+        />
+        <ImgFeature
+          :image="CoverWork"
+          title="Work"
+          description="Bring your team together with centralized file storage"
         />
       </div>
+    </div>
 
-      <Card>
-        <template #content>
-          <div
-            class="flex flex-row justify-center items-center md:flex-nowrap flex-wrap gap-5"
-          >
-            <Button class="shrink-0 grow" @click="this.$router.push({ name: 'register' })" raised>
-              <font-awesome-icon :icon="['fas', 'user-plus']" />
-              <span class="px-2">Sign Up</span>
-            </Button>
-            <Button class="shrink-0 grow" @click="this.$router.push({ name: 'login' })" outlined>
-              <font-awesome-icon icon="fa-solid fa-arrow-right-to-bracket" />
-              <span class="px-2">Sign In</span>
-            </Button>
-          </div>
-        </template>
-      </Card>
+    <Divider /> -->
+
+    <div class="flex flex-col items-center text-center pt-14">
+      <h1 class="text-4xl font-semibold uppercase text-accent">
+        Setting the Bar Higher
+      </h1>
+      <p class="text-1xl text-dim-accent">
+        How do we set ourselves apart from typical file hosting platforms
+      </p>
+
+      <XyzTransitionGroup
+        class="item-group flex flex-col md:flex-row items-stretch flex-wrap justify-center gap-5 px-14 xl:px-60 mt-14"
+        appear
+        xyz="fade stagger-1.5 right-100% out-back duration-10 delay-8"
+      >
+        <Feature
+          v-if="true"
+          icon="fa-solid fa-gears"
+          title="Customization"
+          description="With your customization features, You are able to change domain, embed and so much more"
+        />
+        <Feature
+          v-if="true"
+          icon="fa-solid fa-credit-card"
+          title="Affordable"
+          description="Unlike traditional file hosts, we offer affordable pricing alongside our free solution"
+        />
+        <Feature
+          v-if="true"
+          icon="fa-solid fa-link"
+          title="Connections"
+          description="Add your friends or colleagues to your friendlist to share your files with them in a matter of a few clicks"
+        />
+      </XyzTransitionGroup>
     </div>
-  </div>
- 
-  <div class="flex flex-col items-center text-center pt-14 px-5">
-    <h1 class="text-4xl font-semibold uppercase text-accent">
-      From gamers to businesses
-    </h1>
-    <p class="text-1xl text-dim-accent">
-      No matter who you are, we have a file hosting solution tailored for your
-      needs.
-    </p>
-    <div
-      class="flex flex-col md:flex-row flex-wrap items-stretch justify-center gap-5 px-14 xl:px-60 mt-14"
-    >
-      <ImgFeature
-        image="/cover-gaming.png"
-        title="Gaming"
-        description="Share your clips with your friends with a click of a button"
-      />
-      <ImgFeature
-        image="/cover-work.png"
-        title="Work"
-        description="Bring your team together with centralized file storage"
-      />
-      <ImgFeature
-        image="/cover-family.png"
-        title="Family"
-        description="Send images of the things you've done to your family"
-      />
-    </div>
-  </div>
 
     <Divider />
 
