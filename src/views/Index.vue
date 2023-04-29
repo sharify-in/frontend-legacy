@@ -103,63 +103,33 @@
     </div>
   </div>
 
-  <Divider />
+    <Divider />
 
-  <div class="flex flex-col items-center text-center pt-14 px-5">
-    <h1 class="text-4xl font-semibold uppercase text-accent">
-      Setting the Bar Higher
-    </h1>
-    <p class="text-1xl text-dim-accent">
-      How do we set ourselves apart from typical file hosting platforms
-    </p>
+    <div class="flex flex-col items-center text-center pt-14">
+      <h1 class="text-4xl font-semibold uppercase text-accent">
+        Still not convinced?
+      </h1>
+      <p class="text-1xl text-dim-accent">
+        It's not just a simple service, It's an entire community!
+      </p>
 
-    <div
-      class="flex flex-col md:flex-row flex-wrap items-stretch justify-center gap-5 px-14 xl:px-60 mt-14"
-    >
-      <Feature
-        icon="fa-solid fa-gears"
-        title="Customization"
-        description="With your customization features, You are able to change domain, embed and so much more"
-      />
-      <Feature
-        icon="fa-solid fa-credit-card"
-        title="Affordable"
-        description="Unlike traditional file hosts, we offer affordable pricing alongside our free solution"
-      />
-      <Feature
-        icon="fa-solid fa-link"
-        title="Connections"
-        description="Add your friends or colleagues to your friendlist to share your files with them in a matter of a few clicks"
-      />
+      <div
+        class="flex flex-col md:flex-row items-stretch flex-wrap justify-center gap-5 px-14 mt-14 xl:px-60 w-full"
+      >
+        <Statistic icon="fa-solid fa-users" title="Users" :number="54356" />
+        <Statistic icon="fa-solid fa-upload" title="Files" :number="54356" />
+        <Statistic icon="fa-solid fa-globe" title="Domains" :number="54356" />
+      </div>
     </div>
   </div>
-
-  <Divider />
 </template>
 
 <script setup>
 import Feature from "../components/Feature.vue";
-</script>
+import Statistic from "../components/Statistic.vue";
 
-<script>
-export default {
-  name: "HomeView",
-  data() {
-    return {
-      windowTop: 0,
-    };
-  },
-  mounted() {
-    window.addEventListener("scroll", this.onScroll);
-  },
-  beforeDestroy() {
-    window.removeEventListener("scroll", this.onScroll);
-  },
-  methods: {
-    onScroll(e) {
-      this.windowTop = e.target.documentElement.scrollTop;
-      console.log(this.windowTop);
-    },
-  },
-};
+import CoverGaming from "../assets/img/cover-gaming.png";
+import CoverWork from "../assets/img/cover-work.png";
+import CoverFamily from "../assets/img/cover-family.png";
+import TransparentLogo from "../assets/img/transparent.png";
 </script>

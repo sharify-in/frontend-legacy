@@ -23,11 +23,23 @@ import {
   faArrowRightToBracket,
   faCreditCard,
   faUserPlus,
+  faUpload,
+  faUsers,
   faGears,
+  faGlobe,
   faLink,
 } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faArrowRightToBracket, faCreditCard, faUserPlus, faGears, faLink);
+library.add(
+  faArrowRightToBracket,
+  faCreditCard,
+  faUserPlus,
+  faUpload,
+  faUsers,
+  faGears,
+  faGlobe,
+  faLink
+);
 
 const app = createApp(App);
 
