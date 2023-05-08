@@ -5,7 +5,9 @@
     <XyzTransition appear xyz="fade down duration-10 delay-1.5">
       <Card v-if="true" class="flex flex-col items-center w-full md:w-96">
         <template #title>
-          <p v-if="request.done && !request.error" class="text-center">Sign Up</p>
+          <p v-if="request.done && !request.error" class="text-center">
+            Sign Up
+          </p>
         </template>
         <template #content>
           <ProgressSpinner v-if="!request.done && !request.error" />
@@ -16,7 +18,7 @@
             <div class="flex flex-col gap-6">
               <div class="p-inputgroup flex-1">
                 <span class="p-inputgroup-addon">
-                  <i class="pi pi-user"></i>
+                  <font-awesome-icon :icon="['fas', 'user']" />
                 </span>
                 <span class="p-float-label">
                   <InputText
@@ -29,7 +31,7 @@
               </div>
               <div class="p-inputgroup flex-1">
                 <span class="p-inputgroup-addon">
-                  <i class="pi pi-envelope"></i>
+                  <font-awesome-icon :icon="['fas', 'envelope']" />
                 </span>
                 <span class="p-float-label">
                   <InputText
@@ -42,7 +44,7 @@
               </div>
               <div class="p-inputgroup flex-1">
                 <span class="p-inputgroup-addon">
-                  <i class="pi pi-lock"></i>
+                  <font-awesome-icon :icon="['fas', 'lock']" />
                 </span>
                 <span class="p-float-label">
                   <Password
@@ -71,7 +73,7 @@
               </div>
               <div class="p-inputgroup flex-1">
                 <span class="p-inputgroup-addon">
-                  <i class="pi pi-ticket"></i>
+                  <font-awesome-icon :icon="['fas', 'ticket']" />
                 </span>
                 <span class="p-float-label">
                   <Password
@@ -86,15 +88,18 @@
               </div>
               <Button
                 type="submit"
-                label="Sign Up"
-                icon="pi pi-user-plus"
                 iconPos="right"
-                :loading="registerDone"
-              />
+                :loading="registerRequest.loading"
+              >
+              <div class="flex justify-center items-center w-full">
+                <font-awesome-icon :icon="['fas', 'user-plus']" />
+                <span class="px-2">Sign Up</span>
+              </div>
+              </Button>
             </div>
           </form>
-          <div class="text-center" v-else>
-            <i class="pi pi-times" style="font-size: 2.5rem; color: #ff5252;"></i>
+          <div class="text-center" v-else-if="!request.loading & request.error">
+            <img :src="fixingBugs" alt="error" />
             <h1 class="text-3xl">Oops..</h1>
             <p>It looks like something is wrong</p>
           </div>
@@ -110,6 +115,8 @@ import { reactive, ref, onMounted } from "vue";
 import { useToast } from "primevue/usetoast";
 import router from "@/router";
 import axios from "axios";
+
+import fixingBugs from "@/assets/img/error/fixing_bugs.svg";
 const toast = useToast();
 
 const formValues = reactive({
@@ -121,22 +128,28 @@ const formValues = reactive({
 
 const request = reactive({
   done: false,
-  error: true,
+  error: false,
 });
 onMounted(async () => {
   await axios
     .get("/stats")
-    .then((request.done = true))
-    .catch((request.error = true));
+    .then(() => {
+      request.done = true;
+    })
+    .catch(() => {
+      request.error = true;
+    });
+  console.log(request);
 });
 
 const registerRequest = reactive({
   done: false,
-  error: true
+  loading: false,
+  error: false,
 });
 const register = async () => {
   await axios.post("/auth/register", form).then((res) => {
-    const user = res.data.user
+    const user = res.data.user;
   });
 };
 </script>
@@ -145,5 +158,9 @@ const register = async () => {
 .p-password > :global(input) {
   border-top-left-radius: 0px !important;
   border-bottom-left-radius: 0px !important;
+}
+
+.p-inputgroup-addon {
+  padding-left: 15px;
 }
 </style>

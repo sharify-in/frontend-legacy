@@ -12,7 +12,7 @@
             <div class="flex flex-col gap-6">
               <div class="p-inputgroup flex-1">
                 <span class="p-inputgroup-addon">
-                  <i class="pi pi-user"></i>
+                  <font-awesome-icon :icon="['fas', 'user']" />
                 </span>
                 <span class="p-float-label">
                   <InputText
@@ -25,7 +25,7 @@
               </div>
               <div class="p-inputgroup flex-1">
                 <span class="p-inputgroup-addon">
-                  <i class="pi pi-lock"></i>
+                  <font-awesome-icon :icon="['fas', 'lock']" />
                 </span>
                 <span class="p-float-label">
                   <Password
@@ -71,5 +71,9 @@ const form = reactive({
 .p-password > :global(input) {
   border-top-left-radius: 0px !important;
   border-bottom-left-radius: 0px !important;
+}
+
+.p-inputgroup-addon {
+  padding-left: 15px;
 }
 </style>

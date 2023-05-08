@@ -92,36 +92,6 @@
   </div>
 
   <div class="px-14">
-    <!-- <div class="flex flex-col items-center text-center pt-14">
-      <h1 class="text-4xl font-semibold uppercase text-accent">
-        From gamers to businesses
-      </h1>
-      <p class="text-1xl text-dim-accent">
-        No matter who you are, we have a file hosting solution tailored for your
-        needs.
-      </p>
-      <div
-        class="flex flex-col md:flex-row flex-wrap items-stretch justify-center gap-5 px-14 xl:px-60 mt-14"
-      >
-        <ImgFeature
-          :image="CoverGaming"
-          title="Gaming"
-          description="Share your clips with your friends with a click of a button"
-        />
-        <ImgFeature
-          :image="CoverFamily"
-          title="Family"
-          description="Send images of the things you've done to your family"
-        />
-        <ImgFeature
-          :image="CoverWork"
-          title="Work"
-          description="Bring your team together with centralized file storage"
-        />
-      </div>
-    </div>
-
-    <Divider /> -->
 
     <div class="flex flex-col items-center text-center pt-14">
       <h1 class="text-4xl font-semibold uppercase text-accent">
@@ -161,16 +131,19 @@
 
     <div class="flex flex-col items-center text-center pt-14">
       <h1 class="text-4xl font-semibold uppercase text-accent">
-        Still not convinced?
+        Our statistics don't lie
       </h1>
       <p class="text-1xl text-dim-accent">
         It's not just a simple service, It's an entire community!
+      </p>
+      <p class="text-1xl text-dim-accent">
+        *cached for 30 minutes
       </p>
 
       <div
         class="flex flex-col md:flex-row items-stretch flex-wrap justify-center gap-5 px-14 mt-14 xl:px-60 w-full"
       >
-        <Statistic icon="fa-solid fa-users" title="Users" :number="54356" />
+        <Statistic icon="fa-solid fa-users" title="Users" number="hi" />
         <Statistic icon="fa-solid fa-upload" title="Files" :number="54356" />
         <Statistic icon="fa-solid fa-globe" title="Domains" :number="54356" />
       </div>
@@ -179,6 +152,9 @@
 </template>
 
 <script setup>
+import { onMounted } from "vue"
+import axios from "axios"
+
 import Feature from "../components/Feature.vue";
 import Statistic from "../components/Statistic.vue";
 
@@ -186,4 +162,8 @@ import CoverGaming from "../assets/img/cover-gaming.png";
 import CoverWork from "../assets/img/cover-work.png";
 import CoverFamily from "../assets/img/cover-family.png";
 import TransparentLogo from "../assets/img/transparent.png";
+
+onMounted(async ()=> {
+
+})
 </script>
