@@ -2,45 +2,25 @@
   <XyzTransition appear xyz="fade duration delay-1.5">
     <nav class="xl:flex justify-center fixed top-5 w-full z-50 hidden">
       <div
-        class="flex gap-3 w-fit justify-center font-semibold bg-background select-none px-5 rounded-full border-2 border-accent border-opacity-20"
-      >
-        <img
-          :src="TransparentLogo"
-          alt="sharify.in"
-          class="rounded-full w-12 mx-auto mr-0"
-          draggable="false"
-        />
-        <h1
-          class="text-center self-center uppercase mr-5 font-black text-accent"
-        >
+        class="flex gap-3 w-fit justify-center font-semibold bg-background select-none px-5 rounded-full border-2 border-accent border-opacity-20">
+        <img :src="TransparentLogo" alt="sharify.in" class="rounded-full w-12 mx-auto mr-0" draggable="false" />
+        <h1 class="text-center self-center uppercase mr-5 font-black text-accent">
           Sharify
         </h1>
 
         <a href="#" class="text-center self-center hover:underline">Products</a>
-        <a href="#about" class="text-center self-center hover:underline"
-          >About Us</a
-        >
-        <a
-          href="https://dsc.gg/sharify"
-          class="text-center self-center hover:underline"
-          >Community</a
-        >
-        <a href="/pricing" class="text-center self-center hover:underline mr-3"
-          >Pricing</a
-        >
+        <a href="#about" class="text-center self-center hover:underline">About Us</a>
+        <a href="https://dsc.gg/sharify" class="text-center self-center hover:underline">Community</a>
+        <a href="/pricing" class="text-center self-center hover:underline mr-3">Pricing</a>
       </div>
     </nav>
   </XyzTransition>
   <div
-    class="flex flex-col justify-center items-center bg-gradient-to-br from-indigo-500 to-blue-700 min-w-screen min-h-[60vh]"
-  >
+    class="flex flex-col justify-center items-center bg-gradient-to-br from-indigo-500 to-blue-700 min-w-screen min-h-[60vh]">
     <div
-      class="flex xl:flex-row flex-col justify-around items-center gap-3 flex-wrap md:flex-nowrap w-full px-4 md:px-40"
-    >
+      class="flex xl:flex-row flex-col justify-around items-center gap-3 flex-wrap md:flex-nowrap w-full px-4 md:px-40">
       <XyzTransition appear xyz="fade right-5 duration delay-1">
-        <div
-          class="flex flex-col justify-center xl:items-start items-center gap-3 text-center xl:text-left"
-        >
+        <div class="flex flex-col justify-center xl:items-start items-center gap-3 text-center xl:text-left">
           <h1 class="xl:block hidden text-5xl font-semibold w-1/2">
             Share in a Snap, Anywhere, Anytime!
           </h1>
@@ -52,35 +32,20 @@
           </p>
           <p class="xl:hidden block">Fast and secure file sharing service</p>
           <XyzTransition appear xyz="fade right-5 duration delay-5">
-            <Button
-              class="!hidden xl:!block w-80"
-              @click="this.$router.push({ name: 'register' })"
-              label="Get Started"
-              severity="secondary"
-              raised
-            />
+            <Button class="!hidden xl:!block w-80" @click="this.$router.push({ name: 'register' })" label="Get Started"
+              severity="secondary" raised />
           </XyzTransition>
         </div>
       </XyzTransition>
       <XyzTransition appear xyz="fade right-5 duration delay-6">
         <Card v-if="true">
           <template #content>
-            <div
-              class="flex flex-row justify-center items-center md:flex-nowrap flex-wrap gap-5"
-            >
-              <Button
-                class="shrink-0 grow"
-                @click="this.$router.push({ name: 'register' })"
-                raised
-              >
+            <div class="flex flex-row justify-center items-center md:flex-nowrap flex-wrap gap-5">
+              <Button class="shrink-0 grow" @click="this.$router.push({ name: 'register' })" raised>
                 <font-awesome-icon :icon="['fas', 'user-plus']" />
                 <span class="px-2">Sign Up</span>
               </Button>
-              <Button
-                class="shrink-0 grow"
-                @click="this.$router.push({ name: 'login' })"
-                outlined
-              >
+              <Button class="shrink-0 grow" @click="this.$router.push({ name: 'login' })" outlined>
                 <font-awesome-icon icon="fa-solid fa-arrow-right-to-bracket" />
                 <span class="px-2">Sign In</span>
               </Button>
@@ -92,7 +57,6 @@
   </div>
 
   <div class="px-14">
-
     <div class="flex flex-col items-center text-center pt-14">
       <h1 class="text-4xl font-semibold uppercase text-accent">
         Setting the Bar Higher
@@ -103,27 +67,13 @@
 
       <XyzTransitionGroup
         class="item-group flex flex-col md:flex-row items-stretch flex-wrap justify-center gap-5 px-14 xl:px-60 mt-14"
-        appear
-        xyz="fade stagger-1.5 right-100% out-back duration-10 delay-8"
-      >
-        <Feature
-          v-if="true"
-          icon="fa-solid fa-gears"
-          title="Customization"
-          description="With your customization features, You are able to change domain, embed and so much more"
-        />
-        <Feature
-          v-if="true"
-          icon="fa-solid fa-credit-card"
-          title="Affordable"
-          description="Unlike traditional file hosts, we offer affordable pricing alongside our free solution"
-        />
-        <Feature
-          v-if="true"
-          icon="fa-solid fa-link"
-          title="Connections"
-          description="Add your friends or colleagues to your friendlist to share your files with them in a matter of a few clicks"
-        />
+        appear xyz="fade stagger-1.5 right-100% out-back duration-10 delay-8">
+        <Feature v-if="true" icon="fa-solid fa-gears" title="Customization"
+          description="With your customization features, You are able to change domain, embed and so much more" />
+        <Feature v-if="true" icon="fa-solid fa-credit-card" title="Affordable"
+          description="Unlike traditional file hosts, we offer affordable pricing alongside our free solution" />
+        <Feature v-if="true" icon="fa-solid fa-link" title="Connections"
+          description="Add your friends or colleagues to your friendlist to share your files with them in a matter of a few clicks" />
       </XyzTransitionGroup>
     </div>
 
@@ -136,34 +86,43 @@
       <p class="text-1xl text-dim-accent">
         It's not just a simple service, It's an entire community!
       </p>
-      <p class="text-1xl text-dim-accent">
-        *cached for 30 minutes
-      </p>
+      <p class="text-1xl text-dim-accent">*cached for one hour</p>
 
-      <div
-        class="flex flex-col md:flex-row items-stretch flex-wrap justify-center gap-5 px-14 mt-14 xl:px-60 w-full"
-      >
-        <Statistic icon="fa-solid fa-users" title="Users" number="hi" />
-        <Statistic icon="fa-solid fa-upload" title="Files" :number="54356" />
-        <Statistic icon="fa-solid fa-globe" title="Domains" :number="54356" />
+      <div class="flex flex-col md:flex-row items-stretch flex-wrap justify-center gap-5 px-14 mt-14 xl:px-60 w-full">
+        <Statistic icon="fa-solid fa-users" title="Users" :number="stats.users" :loading="request.loading" :error="request.error" />
+        <Statistic icon="fa-solid fa-upload" title="Files" :number="stats.files" :loading="request.loading"
+          :error="request.error" />
+        <Statistic icon="fa-solid fa-globe" title="Domains" :number="stats.domains" :loading="request.loading"
+          :error="request.error" />
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { onMounted } from "vue"
-import axios from "axios"
+import { onMounted, reactive, ref } from "vue";
+import axios from "axios";
 
 import Feature from "../components/Feature.vue";
 import Statistic from "../components/Statistic.vue";
-
-import CoverGaming from "../assets/img/cover-gaming.png";
-import CoverWork from "../assets/img/cover-work.png";
-import CoverFamily from "../assets/img/cover-family.png";
 import TransparentLogo from "../assets/img/transparent.png";
 
-onMounted(async ()=> {
+let request = reactive({
+  loading: true,
+  error: false,
+});
 
-})
+let stats = reactive({});
+
+onMounted(async () => {
+  await axios.get("/stats").then(async (res) => {
+    stats = res.data.state.stats
+    request.loading = false
+
+  }).catch(() => {
+    request.loading = false
+    request.error = true
+  })
+  console.log(stats)
+});
 </script>
