@@ -38,7 +38,9 @@ const router = createRouter({
         title: "Register - Sharify.in",
         layout: BlankLayout,
       }
-    },
+    }
+    //make /discord redirect to our discord server
+
     // {
     //   path: '/about',
     //   name: 'about',

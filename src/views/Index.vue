@@ -97,6 +97,8 @@
       </div>
     </div>
   </div>
+
+  <Footer />
 </template>
 
 <script setup>

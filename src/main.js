@@ -32,8 +32,12 @@ import {
   faLink,
   faUser,
   faLock,
-  faBan,
+  faBan
 } from "@fortawesome/free-solid-svg-icons";
+
+import {
+  faDiscord
+} from '@fortawesome/free-brands-svg-icons';
 
 library.add(
   faArrowRightToBracket,
@@ -49,6 +53,7 @@ library.add(
   faLink,
   faUser,
   faBan,
+  faDiscord
 );
 
 const app = createApp(App);
