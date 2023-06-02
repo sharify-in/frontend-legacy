@@ -4,6 +4,8 @@ import Register from "../views/Register.vue";
 import HomeView from "../views/Index.vue";
 import Login from "../views/Login.vue";
 
+import DashboardIndex from "../views/dashboard/Index.vue"
+
 import BlankLayout from "../layouts/Blank.vue";
 import DashboardLayout from "../layouts/Dashboard.vue";
 
@@ -38,17 +40,16 @@ const router = createRouter({
         title: "Register - Sharify.in",
         layout: BlankLayout,
       }
+    },
+    {
+      path: "/dashboard",
+      name: "dashboard",
+      component: DashboardIndex,
+      meta: {
+        title: "Dashboard - Sharify.in",
+        layout: DashboardLayout
+      }
     }
-    //make /discord redirect to our discord server
-
-    // {
-    //   path: '/about',
-    //   name: 'about',
-    //   // route level code-splitting
-    //   // this generates a separate chunk (About.[hash].js) for this route
-    //   // which is lazy-loaded when the route is visited.
-    //   component: () => import('../views/AboutView.vue')
-    // }
   ],
 });
 

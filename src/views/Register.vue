@@ -129,7 +129,9 @@ const registerRequest = reactive({
   error: false,
 });
 const register = async () => {
+  registerRequest.loading = true
   await axios.post("/auth/register", formValues).then((res) => {
+    registerRequest.loading = false
     toast.add({ severity: 'success', summary: 'Success!', detail: res.data.message, life: 3000 });
     return router.push({ name: "login" })
   }).catch((err) => {
@@ -141,6 +143,14 @@ const register = async () => {
         severity: "error",
         summary: "Validation Error",
         detail: furry.errors[0].message,
+        life: 3000
+      })
+    } else {
+      registerRequest.loading = false
+      return toast.add({
+        severity: "error",
+        summary: "Registration Failed",
+        detail: furry.message,
         life: 3000
       })
     }
