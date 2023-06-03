@@ -14,6 +14,7 @@ import "./assets/main.css";
 import "./assets/tailwind.css";
 
 import "primevue/resources/primevue.min.css";
+import "primeicons/primeicons.css";
 import "./assets/theme.css";
 
 /* import font awesome */
@@ -32,12 +33,10 @@ import {
   faLink,
   faUser,
   faLock,
-  faBan
+  faBan,
 } from "@fortawesome/free-solid-svg-icons";
 
-import {
-  faDiscord
-} from '@fortawesome/free-brands-svg-icons';
+import { faDiscord } from "@fortawesome/free-brands-svg-icons";
 
 library.add(
   faArrowRightToBracket,

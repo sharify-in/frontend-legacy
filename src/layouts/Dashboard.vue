@@ -5,7 +5,8 @@
       !authStore.loading &&
       !statsStore.loading &&
       authStore.user &&
-      statsStore.stats
+      statsStore.stats &&
+      authStore.user.emailConfirmed
     " class="h-screen">
       <a-layout-header class="flex flex-row justify-between items-center"
         :style="{ width: '100vw', 'background-color': '#101010' }">
@@ -27,6 +28,22 @@
     </a-layout>
     <div v-else-if="authStore.loading || statsStore.loading" class="grid h-screen place-items-center">
       <a-spin tip="Loading..." :indicator="indicator"></a-spin>
+    </div>
+    <div v-if="
+      authStore.user && !authStore.loading && !authStore.user.emailConfirmed
+    " class="grid h-screen place-items-center p-2">
+      <a-card class="flex flex-col items-center w-2/5">
+        <a-result status="warning" title="Check your email!" sub-title="We sent you an email with verification link.">
+          <template #extra>
+            <div class="text-center">
+              <h3 class="text-xl">Didn't get it?</h3>
+              <button class="hover:underline" @click="resendVerification()">
+                Send me another link
+              </button>
+            </div>
+          </template>
+        </a-result>
+      </a-card>
     </div>
   </a-config-provider>
 </template>

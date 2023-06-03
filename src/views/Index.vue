@@ -125,6 +125,5 @@ onMounted(async () => {
     request.loading = false
     request.error = true
   })
-  console.log(stats)
 });
 </script>

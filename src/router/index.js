@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import Register from "../views/Register.vue";
 import HomeView from "../views/Index.vue";
 import Login from "../views/Login.vue";
+import EmailVerify from "../views/EmailVerify.vue"
 
 import DashboardIndex from "../views/dashboard/Index.vue"
 
@@ -40,6 +41,14 @@ const router = createRouter({
         title: "Register - Sharify.in",
         layout: BlankLayout,
       }
+    },
+    {
+      path: "/email",
+      name: "EmailVerify",
+      component: EmailVerify,
+      meta: {
+        layout: BlankLayout,
+      },
     },
     {
       path: "/dashboard",
