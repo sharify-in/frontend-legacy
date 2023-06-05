@@ -43,13 +43,26 @@
 </template>
 
 <script setup>
-import { reactive } from "vue";
+import { reactive, onMounted } from "vue";
 
+import { useAuthStore } from "@/stores/UserStore";
 import { useToast } from "primevue/usetoast";
 import router from "@/router";
 import axios from "axios";
 
 const toast = useToast();
+
+const authStore= useAuthStore()
+
+onMounted(async () => {
+  await authStore.getUser();
+});
+
+authStore.$subscribe((mutation, state) => {
+  if (state.authUser && !state.requestLoading) {
+    router.push({ name: "dashboard" });
+  }
+});
 
 const form = reactive({
   username: "",

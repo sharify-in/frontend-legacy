@@ -13,7 +13,7 @@
             </template>
             User
         </a-menu-item>
-        <a-sub-menu key="settings">
+        <a-sub-menu key="dashboardSettings">
             <template #icon>
                 <setting-outlined />
             </template>
@@ -41,13 +41,13 @@
         </a-sub-menu>
         <a-menu-item key="dashboardGallery">
             <template #icon>
-                <font-awesome-icon icon="fa-regular fa-image" />
+                <font-awesome-icon icon="fa-solid fa-image" />
             </template>
             Gallery
         </a-menu-item>
         <a-menu-item key="dashboardPremium">
             <template #icon>
-                <font-awesome-icon icon="fa-regular fa-gem" />
+                <font-awesome-icon icon="fa-solid fa-gem" />
             </template>
             Premium
         </a-menu-item>

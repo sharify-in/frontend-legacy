@@ -22,37 +22,51 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import {
   faArrowRightToBracket,
+  faArrowsRotate,
+  faUserShield,
   faCreditCard,
   faUserPlus,
   faEnvelope,
+  faDownload,
   faUpload,
   faTicket,
   faUsers,
   faGears,
   faGlobe,
+  faHouse,
+  faImage,
   faLink,
+  faCopy,
   faUser,
   faLock,
   faBan,
+  faGem,
 } from "@fortawesome/free-solid-svg-icons";
 
 import { faDiscord } from "@fortawesome/free-brands-svg-icons";
 
 library.add(
   faArrowRightToBracket,
+  faArrowsRotate,
+  faUserShield,
   faCreditCard,
   faUserPlus,
   faEnvelope,
+  faDownload,
+  faDiscord,
   faUpload,
   faTicket,
   faUsers,
   faGears,
   faGlobe,
-  faLock,
+  faHouse,
+  faImage,
   faLink,
+  faCopy,
   faUser,
+  faLock,
   faBan,
-  faDiscord
+  faGem
 );
 
 const app = createApp(App);

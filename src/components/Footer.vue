@@ -3,7 +3,7 @@
       <div>
         <h1 class="text-3xl font-bold text-accent">SHARIFY</h1>
         <span>
-          <font-awesome-icon :icon="['fab', 'discord']" onclick="window.open('/discord')"/>
+          <font-awesome-icon :icon="['fab', 'discord']"/>
         </span>
       </div>
 
