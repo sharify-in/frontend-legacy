@@ -89,8 +89,6 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 
