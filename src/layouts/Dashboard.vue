@@ -12,7 +12,7 @@
     >
       <a-layout-header
         class="flex flex-row justify-between items-center"
-        :style="{ width: '100vw', 'background-color': '#101010' }"
+        :style="{ width: '100vw', 'background-color': '#141414' }"
       >
         <NavBar />
       </a-layout-header>
