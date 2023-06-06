@@ -22,7 +22,7 @@
               Refresh API Key
             </a-button>
           </a-popconfirm>
-          <a-button type="primary" class="btn-fix w-full">
+          <a-button type="primary" class="w-full">
             <font-awesome-icon icon="fa-solid fa-copy" class="mr-1" />
             Copy API Key
           </a-button>
@@ -58,7 +58,7 @@
 
     <a-card title="Quick Actions">
       <div class="flex flex-row flex-wrap md:flex-nowrap gap-5 justify-between">
-        <a-button type="primary" class="btn-fix w-full">
+        <a-button type="primary" class="w-full">
           <font-awesome-icon icon="fa-solid fa-download" class="mr-1" />
           Get Config
         </a-button>
@@ -102,9 +102,3 @@ dayjs.extend(relativeTime);
 const authStore = useAuthStore();
 const statsStore = useStatsStore();
 </script>
-
-<style scoped>
-.btn-fix {
-  background-color: #3e97ff;
-}
-</style>

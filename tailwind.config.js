@@ -12,6 +12,10 @@ module.exports = {
         'almost-black': '#171717'
       }
     },
+    
+  },
+  corePlugins: {
+    preflight: false,
   },
   plugins: [],
 };
