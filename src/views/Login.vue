@@ -31,7 +31,7 @@
               <Button type="submit" iconPos="right" :loading="loginRequest.loading">
                 <div class="flex justify-center items-center w-full">
                   <font-awesome-icon icon="fa-solid fa-arrow-right-to-bracket" />
-                  <span class="px-2">Sign Up</span>
+                  <span class="px-2">Sign In</span>
                 </div>
               </Button>
             </div>

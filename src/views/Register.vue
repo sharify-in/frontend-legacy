@@ -26,7 +26,7 @@
                   <font-awesome-icon :icon="['fas', 'envelope']" />
                 </span>
                 <span class="p-float-label">
-                  <InputText id="email" class="p-inputtext-lg" v-model="formValues.email" />
+                  <InputText id="email" class="p-inputemail-lg" v-model="formValues.email" />
                   <label for="email">Email</label>
                 </span>
               </div>

@@ -1,6 +1,6 @@
 <template>
     <a-menu v-model:selectedKeys="selectedKeys" v-model:openKeys="openKeys" mode="inline" :style="{ height: '100%', 'padding-top':'12px' }"
-        @click="handleClick">
+        @click="handleClick" class="select-none">
         <a-menu-item key="dashboard">
             <template #icon>
                 <home-outlined />

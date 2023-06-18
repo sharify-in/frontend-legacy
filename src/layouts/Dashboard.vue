@@ -46,7 +46,7 @@
         <a-result
           status="warning"
           title="Check your email!"
-          sub-title="We sent you an email with verification link."
+          sub-title="We've sent you an email with verification link."
         >
           <template #extra>
             <div class="text-center">

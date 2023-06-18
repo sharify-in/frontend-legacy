@@ -41,6 +41,9 @@ import {
   faLock,
   faBan,
   faGem,
+  faDoorOpen,
+  faGear,
+  faBars
 } from "@fortawesome/free-solid-svg-icons";
 
 import { faDiscord } from "@fortawesome/free-brands-svg-icons";
@@ -66,7 +69,10 @@ library.add(
   faUser,
   faLock,
   faBan,
-  faGem
+  faGem,
+  faDoorOpen,
+  faGear,
+  faBars
 );
 
 const app = createApp(App);
