@@ -24,7 +24,7 @@
                 </span>
                 <span class="p-float-label">
                   <Password v-model="form.password" class="p-inputtext-lg" inputId="password" :feedback="false"
-                    type="password" toggleMask />
+                    type="password" />
                   <label for="password">Password</label>
                 </span>
               </div>

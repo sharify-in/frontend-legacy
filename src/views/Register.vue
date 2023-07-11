@@ -36,7 +36,7 @@
                 </span>
                 <span class="p-float-label">
                   <Password v-model="formValues.password" class="p-inputtext-lg" inputId="password" type="password"
-                    toggleMask>
+                    >
                     <template #header>
                       <h6>Pick a password</h6>
                     </template>
@@ -54,14 +54,14 @@
                   <label for="password">Password</label>
                 </span>
               </div>
-              <div v-if="response.state.registration.inviteOnly" class="p-inputgroup flex-1">
+              <div v-if="response.state.inviteOnly" class="p-inputgroup flex-1">
                 <span class="p-inputgroup-addon">
                   <font-awesome-icon :icon="['fas', 'ticket']" />
                 </span>
                 <span class="p-float-label">
                   <Password v-model="formValues.invite" class="p-inputtext-lg" inputId="invite" :feedback="false"
                     type="password" />
-                  <label for="invite">invite</label>
+                  <label for="invite">Invite</label>
                 </span>
               </div>
               <div class="flex align-items-center">
