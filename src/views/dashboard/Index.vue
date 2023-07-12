@@ -2,8 +2,8 @@
   <div class="flex flex-col gap-3">
     <div class="flex justify-between gap-5">
       <a-card title="API Key" class="w-2/4">
-        <div class="border rounded-lg p-2">
-          <p class="blur hover:blur-none transition-all duration-300">
+        <div v-show="authStore.user.token" class="border rounded-lg p-2">
+          <p ref="api_key" class="blur hover:blur-none transition-all duration-300">
             {{ authStore.user.token }}
           </p>
         </div>
@@ -17,14 +17,15 @@
               Refresh API Key
             </a-button>
           </a-popconfirm>
-          <a-button type="primary" class="w-full">
+          <a-button type="primary" class="w-full" @click="copyKey()">
             <font-awesome-icon icon="fa-solid fa-copy" class="mr-1" />
             Copy API Key
           </a-button>
         </div>
       </a-card>
-      <!-- <a-card title="Annoucements" class="w-2/4">
-        <div class="flex flex-col justify-center gap-5">
+      <a-card title="Annoucements" class="w-2/4">
+        <p>Yeah... as you can see something fucked up during the development and i was too lazy to fix it</p>
+        <!-- <div class="flex flex-col justify-center gap-5">
           <div class="flex flex-col gap-2">
             <div class="flex flex-row items-center gap-2">
               <Avatar
@@ -47,8 +48,8 @@
             </div>
           </div>
           <p class="ml-2">{{ statsStore.stats.announcements.content }}</p>
-        </div>
-      </a-card> -->
+        </div> -->
+      </a-card>
     </div>
 
     <a-card title="Quick Actions">
@@ -152,6 +153,7 @@
 </template>
 
 <script setup>
+import { onMounted, ref } from 'vue';
 import { notification } from 'ant-design-vue';
 import axios from "axios";
 
@@ -183,5 +185,15 @@ async function refreshKey() {
     });
   })
 
+}
+
+const api_key = ref()
+
+function copyKey() {
+  navigator.clipboard.writeText(authStore.user.token);
+  notification["success"]({
+      message: 'Success!',
+      description: "Copied to clipboard!",
+    });
 }
 </script>
