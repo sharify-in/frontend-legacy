@@ -8,12 +8,7 @@
           </p>
         </div>
         <div class="flex gap-5 mt-5">
-          <a-popconfirm
-            placement="topLeft"
-            ok-text="Yes"
-            cancel-text="No"
-            @confirm="confirm"
-          >
+          <a-popconfirm placement="topLeft" ok-text="Yes" cancel-text="No" @confirm="refreshKey()">
             <template #title>
               <p>Are you sure you want to refresh your API Key?</p>
             </template>
@@ -28,7 +23,7 @@
           </a-button>
         </div>
       </a-card>
-      <a-card title="Annoucements" class="w-2/4">
+      <!-- <a-card title="Annoucements" class="w-2/4">
         <div class="flex flex-col justify-center gap-5">
           <div class="flex flex-col gap-2">
             <div class="flex flex-row items-center gap-2">
@@ -53,7 +48,7 @@
           </div>
           <p class="ml-2">{{ statsStore.stats.announcements.content }}</p>
         </div>
-      </a-card>
+      </a-card> -->
     </div>
 
     <a-card title="Quick Actions">
@@ -66,29 +61,10 @@
             </a-menu>
           </template>
           <a-button type="primary" class="w-full">
-            <font-awesome-icon :icon="['fas', 'download']" class="mr-1" /> 
+            <font-awesome-icon :icon="['fas', 'download']" class="mr-1" />
             Get Config
           </a-button>
         </a-dropdown>
-
-        <!-- <a-dropdown-button @click="handleButtonClick" type="primary">
-            <p>
-              <font-awesome-icon :icon="['fas', 'download']" /> 
-              Get Config
-            </p>
-            <template #overlay>
-              <a-menu @click="handleMenuClick" class="border-[#213b5b] border">
-                <a-menu-item key="1">
-                  <UserOutlined />
-                  ShareX
-                </a-menu-item>
-                <a-menu-item key="2">
-                  <UserOutlined />
-                  iOS
-                </a-menu-item>
-              </a-menu>
-            </template>
-          </a-dropdown-button> -->
 
         <a-button type="primary" disabled class="w-full">
           <font-awesome-icon :icon="['fab', 'discord']" class="mr-1" />
@@ -102,59 +78,63 @@
     <!-- <a-card title="Guides"> -->
     <a-card>
       <a-tabs v-model:activeKey="activeKey" :tab-position="tabPosition" animated>
-    
+
         <!-- INTRUDUCTION -->
         <a-tab-pane key="1" tab="Guides">
-            <pre class="font-sans">
-Introduction
-
-
-
-            </pre>
-            <a-dropdown-button>
-                Popular Guides
-                <template #overlay>
-                    <a-menu @click="handleMenuClick">
-                      <a-menu-item key="1"><UserOutlined />1st tutorial</a-menu-item>
-                      <a-menu-item key="2"><UserOutlined />2nd tutorial</a-menu-item>
-                      <a-menu-item key="3"><UserOutlined />3rd tutorial</a-menu-item>
-                      <a-menu-item key="4"><UserOutlined />4th tutorial</a-menu-item>
-                      <a-menu-item key="5"><UserOutlined />5th tutorial</a-menu-item>
-                    </a-menu>
-                </template>
-                <template #icon><font-awesome-icon :icon="['fas', 'bars']" /></template>
-            </a-dropdown-button>
+          <pre class="font-sans">Introduction
+          </pre>
+          <a-dropdown-button>
+            Popular Guides
+            <template #overlay>
+              <a-menu @click="handleMenuClick">
+                <a-menu-item key="1">
+                  <UserOutlined />1st tutorial
+                </a-menu-item>
+                <a-menu-item key="2">
+                  <UserOutlined />2nd tutorial
+                </a-menu-item>
+                <a-menu-item key="3">
+                  <UserOutlined />3rd tutorial
+                </a-menu-item>
+                <a-menu-item key="4">
+                  <UserOutlined />4th tutorial
+                </a-menu-item>
+                <a-menu-item key="5">
+                  <UserOutlined />5th tutorial
+                </a-menu-item>
+              </a-menu>
+            </template>
+            <template #icon><font-awesome-icon :icon="['fas', 'bars']" /></template>
+          </a-dropdown-button>
 
         </a-tab-pane>
 
         <!-- ˇGUIDE 1 -->
         <a-tab-pane key="2" tab="Pinned tutorial">
-            <pre class="font-sans">
-Lorem ipsum gugu gaga bla bla kuchnu ti fotra 2
+          <pre class="font-sans">
+              Lorem ipsum gugu gaga bla bla kuchnu ti fotra 2
 
-Guide on how to upload/use sharify
-Shortened version (click 'learn more' to open tutorial)
+              Guide on how to upload/use sharify
+              Shortened version (click 'learn more' to open tutorial)
             </pre>
-            <a-button>Learn More</a-button>
+          <a-button>Learn More</a-button>
         </a-tab-pane>
 
         <!-- GUIDE 2 -->
         <a-tab-pane key="3" tab="Tutorial 2">
-            <pre class="font-sans">
-Lorem ipsum gugu gaga bla bla kuchnu ti fotra 2
+          <pre class="font-sans">
+            Lorem ipsum gugu gaga bla bla kuchnu ti fotra 2
 
-Random guide
-Shortened version (click 'learn more' to open tutorial)
+            Random guide
+            Shortened version (click 'learn more' to open tutorial)
             </pre>
-            <a-button>Learn More</a-button>
+          <a-button>Learn More</a-button>
         </a-tab-pane>
-    
-    </a-tabs>
+
+      </a-tabs>
     </a-card>
 
-    <div
-      class="flex flex-col flex-wrap items-center md:flex-nowrap md:flex-row md:justify-center gap-5"
-    >
+    <div class="flex flex-col flex-wrap items-center md:flex-nowrap md:flex-row md:justify-center gap-5">
       <a-card class="w-full text-center">
         <p>Users</p>
         <a-statistic :value="statsStore.stats.stats.users" />
@@ -169,10 +149,12 @@ Shortened version (click 'learn more' to open tutorial)
       </a-card>
     </div>
   </div>
-
 </template>
 
 <script setup>
+import { notification } from 'ant-design-vue';
+import axios from "axios";
+
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 
@@ -183,4 +165,23 @@ dayjs.extend(relativeTime);
 
 const authStore = useAuthStore();
 const statsStore = useStatsStore();
+
+async function refreshKey() {
+  await axios.post("/user/@me/refresh_key").then(async (res) => {
+    notification["success"]({
+      message: 'Success!',
+      description: res.data.message,
+    });
+    // Wait for 1.5 seconds for better effect
+    // Why nodejs can't add wait or sleep function??
+    await new Promise(resolve => setTimeout(resolve, 1500))
+    window.location.reload()
+  }).catch(() => {
+    notification["error"]({
+      message: 'Oops...',
+      description: 'Something went wrong!',
+    });
+  })
+
+}
 </script>
