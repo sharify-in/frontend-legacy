@@ -17,7 +17,7 @@ export const useStatsStore = defineStore("stats", {
       await axios
         .get("/stats")
         .then((response) => {
-          this.hostStats = response.data.state;
+          this.hostStats = response.data;
           this.requestLoading = false
         })
         .catch((err) => {

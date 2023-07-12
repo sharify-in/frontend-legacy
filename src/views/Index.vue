@@ -118,7 +118,7 @@ let stats = reactive({});
 
 onMounted(async () => {
   await axios.get("/stats").then(async (res) => {
-    stats = res.data.state.stats
+    stats = res.data.stats
     request.loading = false
 
   }).catch(() => {

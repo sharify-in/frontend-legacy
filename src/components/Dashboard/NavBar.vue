@@ -2,7 +2,7 @@
   <div>
     <p class="text-xl font-bold">
       sharify.in
-      <a-tag v-if="statsStore.stats.beta" color="orange">Beta</a-tag>
+      <a-tag v-if="statsStore.stats.state.beta" color="orange">Beta</a-tag>
     </p>
   </div>
   <div class="flex flex-row items-center gap-2">
