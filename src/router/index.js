@@ -1,12 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-import Register from "../views/Register.vue";
-import HomeView from "../views/Index.vue";
-import Login from "../views/Login.vue";
-import EmailVerify from "../views/EmailVerify.vue"
-
-import DashboardIndex from "../views/dashboard/Index.vue"
-
 import BlankLayout from "../layouts/Blank.vue";
 import DashboardLayout from "../layouts/Dashboard.vue";
 
@@ -18,7 +11,7 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      component: HomeView,
+      component: () => import("../views/Index.vue"),
       meta: {
         title: "Home - Sharify.in",
         layout: BlankLayout,
@@ -27,7 +20,7 @@ const router = createRouter({
     {
       path: "/login",
       name: "login",
-      component: Login,
+      component: () => import("../views/Login.vue"),
       meta: {
         title: "Login - Sharify.in",
         layout: BlankLayout,
@@ -36,7 +29,7 @@ const router = createRouter({
     {
       path: "/register",
       name: "register",
-      component: Register,
+      component: () => import("../views/Register.vue"),
       meta: {
         title: "Register - Sharify.in",
         layout: BlankLayout,
@@ -45,7 +38,7 @@ const router = createRouter({
     {
       path: "/email",
       name: "EmailVerify",
-      component: EmailVerify,
+      component: () => import("../views/EmailVerify.vue"),
       meta: {
         layout: BlankLayout,
       },
@@ -53,7 +46,7 @@ const router = createRouter({
     {
       path: "/dashboard",
       name: "dashboard",
-      component: DashboardIndex,
+      component: () => import("../views/dashboard/Index.vue"),
       meta: {
         title: "Dashboard - Sharify.in",
         layout: DashboardLayout

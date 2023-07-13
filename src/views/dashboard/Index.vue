@@ -2,8 +2,8 @@
   <div class="flex flex-col gap-3">
     <div class="flex justify-between gap-5">
       <a-card title="API Key" class="w-2/4">
-        <div v-show="authStore.user.token" class="border rounded-lg p-2">
-          <p ref="api_key" class="blur hover:blur-none transition-all duration-300">
+        <div class="border rounded-lg p-2">
+          <p class="blur hover:blur-none transition-all duration-300">
             {{ authStore.user.token }}
           </p>
         </div>
