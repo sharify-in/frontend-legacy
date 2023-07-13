@@ -3,8 +3,6 @@ import { createRouter, createWebHistory } from "vue-router";
 import BlankLayout from "../layouts/Blank.vue";
 import DashboardLayout from "../layouts/Dashboard.vue";
 
-
-
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -24,7 +22,7 @@ const router = createRouter({
       meta: {
         title: "Login - Sharify.in",
         layout: BlankLayout,
-      }
+      },
     },
     {
       path: "/register",
@@ -33,7 +31,7 @@ const router = createRouter({
       meta: {
         title: "Register - Sharify.in",
         layout: BlankLayout,
-      }
+      },
     },
     {
       path: "/email",
@@ -49,16 +47,79 @@ const router = createRouter({
       component: () => import("../views/dashboard/Index.vue"),
       meta: {
         title: "Dashboard - Sharify.in",
-        layout: DashboardLayout
-      }
-    }
+        layout: DashboardLayout,
+      },
+    },
+    {
+      path: "/dashboard/@me",
+      name: "dashboard_user",
+      component: () => import("../views/dashboard/@me.vue"),
+      meta: {
+        title: "Dashboard - Sharify.in",
+        layout: DashboardLayout,
+      },
+    },
+    {
+      path: "/dashboard/settings/account",
+      name: "dashboard_account",
+      component: () => import("../views/dashboard/settings/Account.vue"),
+      meta: {
+        title: "Dashboard - Sharify.in",
+        layout: DashboardLayout,
+      },
+    },
+    {
+      path: "/dashboard/settings/privacy",
+      name: "dashboard_privacy",
+      component: () => import("../views/dashboard/settings/Privacy.vue"),
+      meta: {
+        title: "Dashboard - Sharify.in",
+        layout: DashboardLayout,
+      },
+    },
+    {
+      path: "/dashboard/settings/uploading",
+      name: "dashboard_uploading",
+      component: () => import("../views/dashboard/settings/Uploading.vue"),
+      meta: {
+        title: "Dashboard - Sharify.in",
+        layout: DashboardLayout,
+      },
+    },
+    {
+      path: "/dashboard/gallery",
+      name: "dashboard_gallery",
+      component: () => import("../views/dashboard/Gallery.vue"),
+      meta: {
+        title: "Dashboard - Sharify.in",
+        layout: DashboardLayout,
+      },
+    },
+    {
+      path: "/dashboard/premium",
+      name: "dashboard_premium",
+      component: () => import("../views/dashboard/Premium.vue"),
+      meta: {
+        title: "Dashboard - Sharify.in",
+        layout: DashboardLayout,
+      },
+    },
+    {
+      path: "/dashboard/admin",
+      name: "dashboard_admin",
+      component: () => import("../views/dashboard/Admin.vue"),
+      meta: {
+        title: "Dashboard - Sharify.in",
+        layout: DashboardLayout,
+      },
+    },
   ],
 });
 
 router.beforeEach((to, from, next) => {
   // Get the page title from the route meta data that we have defined
   // See further down below for how we setup this data
-  const title = to.meta.title;
+  const { title } = to.meta;
   // If the route has a title, set it as the page title of the document/page
   if (title) {
     document.title = title;

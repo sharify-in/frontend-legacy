@@ -7,51 +7,51 @@
             </template>
             Home
         </a-menu-item>
-        <a-menu-item key="dashboardUser">
+        <a-menu-item key="dashboard_user">
             <template #icon>
                 <user-outlined />
             </template>
             User
         </a-menu-item>
-        <a-sub-menu key="dashboardSettings">
+        <a-sub-menu key="dashboard_settings">
             <template #icon>
                 <setting-outlined />
             </template>
             <template #title>
                 <span>Settings</span>
             </template>
-            <a-menu-item key="dashboardAccount">
+            <a-menu-item key="dashboard_account">
                 <template #icon>
                     <user-outlined />
                 </template>
                 Account
             </a-menu-item>
-            <a-menu-item key="dashboardPrivacy">
+            <a-menu-item key="dashboard_privacy">
                 <template #icon>
                     <eye-outlined />
                 </template>
                 Privacy
             </a-menu-item>
-            <a-menu-item key="dashboardUploading">
+            <a-menu-item key="dashboard_uploading">
                 <template #icon>
                     <font-awesome-icon icon="fa-solid fa-upload" />
                 </template>
                 Uploading
             </a-menu-item>
         </a-sub-menu>
-        <a-menu-item key="dashboardGallery">
+        <a-menu-item key="dashboard_gallery">
             <template #icon>
                 <font-awesome-icon icon="fa-solid fa-image" />
             </template>
             Gallery
         </a-menu-item>
-        <a-menu-item key="dashboardPremium">
+        <a-menu-item key="dashboard_premium">
             <template #icon>
                 <font-awesome-icon icon="fa-solid fa-gem" />
             </template>
             Premium
         </a-menu-item>
-        <a-menu-item key="dashboardAdmin">
+        <a-menu-item key="dashboard_admin">
             <template #icon>
                 <font-awesome-icon icon="fa-solid fa-user-shield" />
             </template>
