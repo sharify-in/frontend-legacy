@@ -1,13 +1,13 @@
 <template>
   <div class="flex flex-col gap-3">
-    <div class="flex justify-between gap-5">
-      <a-card title="API Key" class="w-2/4">
+    <div class="flex flex-wrap md:flex-nowrap justify-between gap-5">
+      <a-card title="API Key" class="w-full">
         <div class="border rounded-lg p-2">
-          <p class="blur hover:blur-none transition-all duration-300">
+          <p class="blur hover:blur-none transition-all duration-300 break-words">
             {{ authStore.user.token }}
           </p>
         </div>
-        <div class="flex gap-5 mt-5">
+        <div class="flex flex-wrap md:flex-nowrap gap-5 mt-5">
           <a-popconfirm placement="topLeft" ok-text="Yes" cancel-text="No" @confirm="refreshKey()">
             <template #title>
               <p>Are you sure you want to refresh your API Key?</p>
@@ -23,7 +23,7 @@
           </a-button>
         </div>
       </a-card>
-      <a-card title="Annoucements" class="w-2/4">
+      <a-card title="Annoucements" class="w-full">
         <p>Yeah... as you can see something fucked up during the development and i was too lazy to fix it</p>
         <!-- <div class="flex flex-col justify-center gap-5">
           <div class="flex flex-col gap-2">
