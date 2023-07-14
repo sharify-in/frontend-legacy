@@ -2,9 +2,6 @@
      <div class="flex flex-col gap-3">
         <div class="flex justify-between gap-5 flex-wrap">
             <a-card title="Username" class="grow">
-                <!--
-                    BUG: Username cannot be edited. please fix 
-                -->
                 <UsernameChange />
             </a-card>
             <a-card title="Credentials" class="grow">
