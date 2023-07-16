@@ -43,7 +43,13 @@ import {
   faGem,
   faDoorOpen,
   faGear,
-  faBars
+  faBars,
+  faStar,
+  faCrown,
+  faShieldHalved,
+  faMoon,
+  faWrench,
+  faCodePullRequest
 } from "@fortawesome/free-solid-svg-icons";
 
 import { faDiscord } from "@fortawesome/free-brands-svg-icons";
@@ -72,7 +78,13 @@ library.add(
   faGem,
   faDoorOpen,
   faGear,
-  faBars
+  faBars,
+  faStar,
+  faCrown,
+  faShieldHalved,
+  faMoon,
+  faWrench,
+  faCodePullRequest
 );
 
 const app = createApp(App);

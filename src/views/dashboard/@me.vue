@@ -7,8 +7,15 @@
                     @{{ authStore.user.username }}
 
                     <div class="flex flex-wrap flex-row gap-3">
-                        <Badge label="Admin" color="#ff0000" icon="fa-solid fa-user" />
-                        <Badge label="Early User" color="#ce85ff" icon="fa-solid fa-user" />
+                        <Owner />
+                        <Admin />
+                        <Staff />
+                        <Moderator />
+                        <Beta />
+                        <Contributor />
+                        <EarlyUser />
+
+                        <Premium />
                     </div>
                 </h1>
                 <p @click="copyId()" class="hover:underline cursor-pointer">{{ authStore.user.id }}</p>
