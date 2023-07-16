@@ -1,5 +1,5 @@
 <template>
-    <div class="p-1 text-base rounded-md bg-green-100">
+    <div class="p-1 text-base rounded-md bg-green-100 select-none">
         <p class=" font-semibold text-green-500"><font-awesome-icon :icon="['fas', 'code-pull-request']" />  Contributor</p>
     </div>
 </template>
