@@ -3,10 +3,11 @@
         <a-card title="Profile" class="w-1/2">
             <div class="flex flex-col items-center w-full h-full">
                 <a-avatar :src="avatarUrl" :size="{ xs: 24, sm: 32, md: 40, lg: 64, xl: 80, xxl: 100 }" />
-                <h1 class="text-3xl mt-5 flex flex-wrap flex-row gap-3">
+                <h1 class="text-3xl mt-5">
                     @{{ authStore.user.username }}
-
-                    <div class="flex flex-wrap flex-row gap-3">
+                </h1>
+                <p @click="copyId()" class="hover:underline cursor-pointer">{{ authStore.user.id }}</p>
+                <div class="flex flex-wrap justify-center gap-3 p-5">
                         <Owner />
                         <Admin />
                         <Staff />
@@ -17,8 +18,6 @@
 
                         <Premium />
                     </div>
-                </h1>
-                <p @click="copyId()" class="hover:underline cursor-pointer">{{ authStore.user.id }}</p>
             </div>
         </a-card>
     </div>
