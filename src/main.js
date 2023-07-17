@@ -49,7 +49,13 @@ import {
   faShieldHalved,
   faMoon,
   faWrench,
-  faCodePullRequest
+  faCodePullRequest,
+  faBoxesPacking,
+  faShield,
+  faPalette,
+  faCertificate,
+  faCloud,
+  faCloudBolt
 } from "@fortawesome/free-solid-svg-icons";
 
 import { faDiscord } from "@fortawesome/free-brands-svg-icons";
@@ -84,7 +90,13 @@ library.add(
   faShieldHalved,
   faMoon,
   faWrench,
-  faCodePullRequest
+  faCodePullRequest,
+  faBoxesPacking,
+  faShield,
+  faPalette,
+  faCertificate,
+  faCloud,
+  faCloudBolt
 );
 
 const app = createApp(App);
