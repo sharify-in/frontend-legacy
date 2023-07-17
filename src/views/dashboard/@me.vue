@@ -10,12 +10,11 @@
                 <div class="flex flex-wrap justify-center gap-3 p-5">
                         <Owner />
                         <Admin />
-                        <Staff />
                         <Moderator />
+                        <Staff />
                         <Beta />
                         <Contributor />
                         <EarlyUser />
-
                         <Premium />
                     </div>
             </div>
