@@ -1,14 +1,29 @@
 <template>
   <div class="flex flex-col gap-3">
+    <a-alert
+      v-show="!warn_dismissed"
+      message="Warning"
+      description="This is a very early release. Expect bugs or missing features."
+      type="warning"
+      show-icon
+      closable
+      />
     <div class="flex flex-wrap md:flex-nowrap justify-between gap-5">
       <a-card title="API Key" class="w-full">
         <div class="border rounded-lg p-2">
-          <p class="blur hover:blur-none transition-all duration-300 break-words">
+          <p
+            class="blur hover:blur-none transition-all duration-300 break-words"
+          >
             {{ authStore.user.token }}
           </p>
         </div>
         <div class="flex flex-wrap md:flex-nowrap gap-5 mt-5">
-          <a-popconfirm placement="topLeft" ok-text="Yes" cancel-text="No" @confirm="refreshKey()">
+          <a-popconfirm
+            placement="topLeft"
+            ok-text="Yes"
+            cancel-text="No"
+            @confirm="refreshKey()"
+          >
             <template #title>
               <p>Are you sure you want to refresh your API Key?</p>
             </template>
@@ -24,7 +39,10 @@
         </div>
       </a-card>
       <a-card title="Annoucements" class="w-full">
-        <p>Yeah... as you can see something fucked up during the development and i was too lazy to fix it</p>
+        <p>
+          Yeah... as you can see something fucked up during the development and
+          i was too lazy to fix it
+        </p>
         <!-- <div class="flex flex-col justify-center gap-5">
           <div class="flex flex-col gap-2">
             <div class="flex flex-row items-center gap-2">
@@ -71,18 +89,22 @@
           <font-awesome-icon :icon="['fab', 'discord']" class="mr-1" />
           Link Discord
         </a-button>
-
-
       </div>
     </a-card>
 
     <!-- <a-card title="Guides"> -->
     <a-card>
-      <a-tabs v-model:activeKey="activeKey" :tab-position="tabPosition" animated>
+      <a-tabs
+        v-model:activeKey="activeKey"
+        :tab-position="tabPosition"
+        animated
+      >
+      <!-- TODO: refactor: use api endpoint and v-each -->
 
         <!-- INTRUDUCTION -->
         <a-tab-pane key="1" tab="Guides">
-          <pre class="font-sans">Introduction
+          <pre class="font-sans">
+Introduction
           </pre>
           <a-dropdown-button>
             Popular Guides
@@ -105,9 +127,10 @@
                 </a-menu-item>
               </a-menu>
             </template>
-            <template #icon><font-awesome-icon :icon="['fas', 'bars']" /></template>
+            <template #icon
+              ><font-awesome-icon :icon="['fas', 'bars']"
+            /></template>
           </a-dropdown-button>
-
         </a-tab-pane>
 
         <!-- ˇGUIDE 1 -->
@@ -117,7 +140,8 @@
 
               Guide on how to upload/use sharify
               Shortened version (click 'learn more' to open tutorial)
-            </pre>
+            </pre
+          >
           <a-button>Learn More</a-button>
         </a-tab-pane>
 
@@ -128,14 +152,16 @@
 
             Random guide
             Shortened version (click 'learn more' to open tutorial)
-            </pre>
+            </pre
+          >
           <a-button>Learn More</a-button>
         </a-tab-pane>
-
       </a-tabs>
     </a-card>
 
-    <div class="flex flex-col flex-wrap items-center md:flex-nowrap md:flex-row md:justify-center gap-5">
+    <div
+      class="flex flex-col flex-wrap items-center md:flex-nowrap md:flex-row md:justify-center gap-5"
+    >
       <a-card class="w-full text-center">
         <p>Users</p>
         <a-statistic :value="statsStore.stats.stats.users" />
@@ -153,8 +179,7 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue';
-import { notification } from 'ant-design-vue';
+import { notification } from "ant-design-vue";
 import axios from "axios";
 
 import dayjs from "dayjs";
@@ -168,32 +193,34 @@ dayjs.extend(relativeTime);
 const authStore = useAuthStore();
 const statsStore = useStatsStore();
 
-async function refreshKey() {
-  await axios.post("/user/@me/refresh_key").then(async (res) => {
-    notification["success"]({
-      message: 'Success!',
-      description: res.data.message,
-    });
-    // Wait for 1.5 seconds for better effect
-    // Why nodejs can't add wait or sleep function??
-    await new Promise(resolve => setTimeout(resolve, 1500))
-    window.location.reload()
-  }).catch(() => {
-    notification["error"]({
-      message: 'Oops...',
-      description: 'Something went wrong!',
-    });
-  })
 
+async function refreshKey() {
+  await axios
+    .post("/user/@me/refresh_key")
+    .then(async (res) => {
+      notification["success"]({
+        message: "Success!",
+        description: res.data.message,
+      });
+      // Wait for 1.5 seconds for better effect
+      // Why nodejs can't add wait or sleep function??
+      await new Promise((resolve) => setTimeout(resolve, 1500));
+      window.location.reload();
+    })
+    .catch(() => {
+      notification["error"]({
+        message: "Oops...",
+        description: "Something went wrong!",
+      });
+    });
 }
 
-const api_key = ref()
 
 function copyKey() {
   navigator.clipboard.writeText(authStore.user.token);
   notification["success"]({
-      message: 'Success!',
-      description: "Copied to clipboard!",
-    });
+    message: "Success!",
+    description: "Copied to clipboard!",
+  });
 }
 </script>
