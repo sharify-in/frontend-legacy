@@ -2,14 +2,16 @@
     <div class="flex flex-col flex-wrap items-center gap-5">
 
         <!-- PLANS -->
-        <div class="flex flex-row flex-wrap items-center gap-5 select-none">
+        <div class="flex flex-row flex-wrap items-center gap-5 select-none" style="max-width: 49.25rem;">
 
-            <div style=" background: rgb(62,151,255); background: linear-gradient(180deg, #4e5ef6 0%, #a7aef1 100%);" class=" rounded-2xl p-5 w-96 flex flex-col gap-2">
+            <!-- PLUS -->
+            <div style=" background: rgb(62,151,255); background: linear-gradient(75deg, #4e5ef6 0%, #8c96ee 100%);" class=" rounded-2xl p-5 w-96 flex flex-col gap-2">
                 <div  class="flex flex-row gap-2 items-center">
-                    <h1 class="text-2xl font-bold"> Share </h1>
+                    <h1 class="text-3xl font-bold"> Share </h1>
                     <div class="rounded-md select-none font-black text-white px-3 uppercase" style="background-color: rgba(255,255,255,0.3);"> Plus </div>
                     <div class="text-3xl w-full text-end"> <font-awesome-icon :icon="['fas', 'cloud']"/> </div>
                 </div>
+                <p class="font-black mb-4">4.99€ / month</p>
 
                 <div class="flex flex-col text-lg">
                     <p><font-awesome-icon :icon="['fas', 'boxes-packing']"/> 10GB of storage</p>
@@ -24,12 +26,14 @@
                 <a-button class="mt-10">Subscribe</a-button>
             </div>
 
-            <div style=" background: rgb(177,0,255); background: linear-gradient(0deg, #a7aef1 0%, #d44ef6 100%);" class=" rounded-2xl p-5 w-96 flex flex-col gap-2">
+            <!-- PRO -->
+            <div style=" background: rgb(177,0,255); background: linear-gradient(75deg, #aa4ef6 0%, #d78cee 100%);" class=" rounded-2xl p-5 w-96 flex flex-col gap-2">
                 <div  class="flex flex-row gap-2 items-center">
-                    <h1 class="text-2xl font-bold"> Share </h1>
+                    <h1 class="text-3xl font-bold"> Share </h1>
                     <div class="rounded-md select-none font-black text-white px-3 uppercase" style="background-color: rgba(255,255,255,0.3);"> Pro </div>
                     <div class="text-3xl w-full text-end"> <font-awesome-icon :icon="['fas', 'cloud-bolt']"/> </div>
                 </div>
+                <p class="font-black mb-4">14.99€ / month</p>
 
                 <div class="flex flex-col text-lg">
                     <p><font-awesome-icon :icon="['fas', 'boxes-packing']"/> 25GB of storage</p>
@@ -41,7 +45,6 @@
 
                 <a-button class="mt-10">Subscribe</a-button>
             </div>
-            
         </div>
 
         <!-- FEATURES -->

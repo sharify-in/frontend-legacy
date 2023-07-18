@@ -55,7 +55,8 @@ import {
   faPalette,
   faCertificate,
   faCloud,
-  faCloudBolt
+  faCloudBolt,
+  faTornado
 } from "@fortawesome/free-solid-svg-icons";
 
 import { faDiscord } from "@fortawesome/free-brands-svg-icons";
@@ -96,7 +97,8 @@ library.add(
   faPalette,
   faCertificate,
   faCloud,
-  faCloudBolt
+  faCloudBolt,
+  faTornado
 );
 
 const app = createApp(App);
