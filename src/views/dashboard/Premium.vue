@@ -23,7 +23,7 @@
                     </p>
                 </div>
                 
-                <a-button class="mt-10">Subscribe</a-button>
+                <button class="mt-10 p-2 rounded-lg bg-white text-accent font-bold border border-white hover:bg-transparent hover:text-white duration-300">Subscribe</button>
             </div>
 
             <!-- PRO -->
@@ -43,7 +43,7 @@
                     <p><font-awesome-icon :icon="['fas', 'lock']" /> Password protected files and way more!</p>
                 </div>
 
-                <a-button class="mt-10">Subscribe</a-button>
+                <button class="mt-10 p-2 rounded-lg bg-white text-[#ad52f5] font-bold border border-white hover:bg-transparent hover:text-white duration-300">Subscribe</button>
             </div>
         </div>
 
