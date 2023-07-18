@@ -6,7 +6,7 @@
     </p>
   </div>
   <div class="flex flex-row items-center gap-2">
-    <a-dropdown @click.prevent>
+    <a-dropdown>
       <div :style="{
         // xel.
         // i will pretend like i didn't saw that
@@ -23,7 +23,7 @@
       </div>
       <template #overlay>
         <a-menu class=" border-[#213b5b] border">
-          <a-menu-item key="logout" :style="{ color: '#d32029' }">
+          <a-menu-item @click="logout()" :style="{ color: '#d32029' }">
             <font-awesome-icon :icon="['fas', 'door-open']" />
             Log out
           </a-menu-item>
@@ -35,6 +35,8 @@
 
 <script setup>
 import axios from "axios";
+import router from "@/router";
+import { notification } from "ant-design-vue";
 
 import { useAuthStore } from "@/stores/UserStore";
 import { useStatsStore } from "@/stores/StatsStore"
@@ -45,4 +47,14 @@ const statsStore = useStatsStore();
 const usernameLetter = authStore.user.username.slice(0, 2).toUpperCase();
 const avatarUrl = `https://avatar.vercel.sh/${authStore.user.username}.svg?text=${usernameLetter}`
 
+async function logout() {
+  await axios.post("/auth/logout").then(() => {
+    notification["success"]({
+      message: "Cya!",
+      description: "Successfully logged out!",
+    });
+    router.push({ name: "home" })
+  })
+
+}
 </script>
