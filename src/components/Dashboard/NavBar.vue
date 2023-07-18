@@ -8,6 +8,9 @@
   <div class="flex flex-row items-center gap-2">
     <a-dropdown @click.prevent>
       <div :style="{
+        // xel.
+        // i will pretend like i didn't saw that
+        // please fix.
         cursor: 'pointer',
         textAlign: 'center',
         display: 'flex',
@@ -20,7 +23,7 @@
       </div>
       <template #overlay>
         <a-menu class=" border-[#213b5b] border">
-          <a-menu-item key="1" :style="{ color: '#d32029' }">
+          <a-menu-item key="logout" :style="{ color: '#d32029' }">
             <font-awesome-icon :icon="['fas', 'door-open']" />
             Log out
           </a-menu-item>
@@ -31,6 +34,8 @@
 </template>
 
 <script setup>
+import axios from "axios";
+
 import { useAuthStore } from "@/stores/UserStore";
 import { useStatsStore } from "@/stores/StatsStore"
 
@@ -39,4 +44,5 @@ const statsStore = useStatsStore();
 
 const usernameLetter = authStore.user.username.slice(0, 2).toUpperCase();
 const avatarUrl = `https://avatar.vercel.sh/${authStore.user.username}.svg?text=${usernameLetter}`
+
 </script>
