@@ -50,8 +50,8 @@ const avatarUrl = `https://avatar.vercel.sh/${authStore.user.username}.svg?text=
 async function logout() {
   await axios.post("/auth/logout").then(() => {
     notification["success"]({
-      message: "Cya!",
-      description: "Successfully logged out!",
+      message: "Success!",
+      description: "You've been logged out!",
     });
     router.push({ name: "home" })
   })

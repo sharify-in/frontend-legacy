@@ -56,10 +56,19 @@ import {
   faCertificate,
   faCloud,
   faCloudBolt,
-  faTornado
+  faTornado,
 } from "@fortawesome/free-solid-svg-icons";
 
-import { faDiscord } from "@fortawesome/free-brands-svg-icons";
+import {
+    faDiscord,
+    faYoutube,
+    faTwitter,
+    faInstagram,
+    faFacebook,
+    faTiktok,
+    faGithub,
+    faTwitch
+} from "@fortawesome/free-brands-svg-icons";
 
 library.add(
   faArrowRightToBracket,
@@ -98,7 +107,14 @@ library.add(
   faCertificate,
   faCloud,
   faCloudBolt,
-  faTornado
+  faTornado,
+  faYoutube,
+  faTwitter,
+  faInstagram,
+  faFacebook,
+  faTiktok,
+  faGithub,
+  faTwitch
 );
 
 const app = createApp(App);
