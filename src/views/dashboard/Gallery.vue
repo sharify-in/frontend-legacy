@@ -32,18 +32,7 @@
                 <a-card-meta title="NVIDIA Capture - ijdrg6.png">
                     <template #description>
                         <a href="">YJBAjnPOcb.png</a>
-                    </template>
-                </a-card-meta>
-            </a-card>
-
-            <a-card class="w-1/4">
-                <template #cover>    
-                    <img src="https://xello.blue/usercontent/bYDTyxXkMC.png" >
-                </template>
-
-                <a-card-meta title="NVIDIA Capture - erhuid.png">
-                    <template #description>
-                        <a href="">bYDTyxXkMC.png</a>
+                        <a-button type="primary" class="mx-3" danger>Delete</a-button>
                     </template>
                 </a-card-meta>
             </a-card>
@@ -56,6 +45,7 @@
                 <a-card-meta title="Leaked pentagon documents.zip">
                     <template #description>
                         <a href="">rjOAjgrk.zip</a>
+                        <a-button type="primary" class="mx-3" danger>Delete</a-button>
                     </template>
                 </a-card-meta>
             </a-card>
