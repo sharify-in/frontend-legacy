@@ -47,6 +47,15 @@ import { ref } from 'vue'
 import { notification } from 'ant-design-vue';
 import { useAuthStore } from "@/stores/UserStore";
 
+import Owner from "@/components/Dashboard/Roles/Owner.vue";
+import Admin from "@/components/Dashboard/Roles/Admin.vue";
+import Moderator from "@/components/Dashboard/Roles/Moderator.vue";
+import Staff from "@/components/Dashboard/Roles/Staff.vue";
+import Beta from "@/components/Dashboard/Roles/Beta.vue";
+import Contributor from "@/components/Dashboard/Roles/Contributor.vue";
+import EarlyUser from "@/components/Dashboard/Roles/EarlyUser.vue";
+import Premium from "@/components/Dashboard/Roles/Premium.vue";
+
 import router from "@/router";
 
 const authStore = useAuthStore();
