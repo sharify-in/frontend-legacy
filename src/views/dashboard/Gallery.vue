@@ -7,7 +7,7 @@
                 <a-input-search
                     v-model:value="onSearchValue"
                     placeholder="Search by file name or display name"
-                    enter-button="Search"
+                    enter-button
                     @search="onSearch"
                     class="w-1/2 grow"
                 />
@@ -228,19 +228,19 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 import type { SelectProps } from 'ant-design-vue';
-import fileUniversal from '../../assets/img/fileUniversal.png';
-import fileZip from '../../assets/img/fileZip.png';
-import fileRar from '../../assets/img/fileRar.png';
-import fileDB from '../../assets/img/fileDB.png';
-import fileDocument from '../../assets/img/fileDocument.png';
-import fileExe from '../../assets/img/fileExe.png';
-import filePDF from '../../assets/img/filePDF.png';
-import filePowerpoint from '../../assets/img/filePowerpoint.png';
-import fileSpreadsheet from '../../assets/img/fileSpreadsheet.png';
-import fileCode from '../../assets/img/fileCode.png';
-import fileAudio from '../../assets/img/fileAudio.png';
+import fileUniversal from '/src/assets/img/fileUniversal.png';
+import fileZip from '/src/assets/img/fileZip.png';
+import fileRar from '/src/assets/img/fileRar.png';
+import fileDB from '/src/assets/img/fileDB.png';
+import fileDocument from '/src/assets/img/fileDocument.png';
+import fileExe from '/src/assets/img/fileExe.png';
+import filePDF from '/src/assets/img/filePDF.png';
+import filePowerpoint from '/src/assets/img/filePowerpoint.png';
+import fileSpreadsheet from '/src/assets/img/fileSpreadsheet.png';
+import fileCode from '/src/assets/img/fileCode.png';
+import fileAudio from '/src/assets/img/fileAudio.png';
 
-const storage_percentage = 32;
+const storage_percentage = 97;
 
 // SEARCH
 const onSearchValue = ref<string>('');

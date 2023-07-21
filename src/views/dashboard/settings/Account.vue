@@ -27,8 +27,5 @@
 
 <script setup>
     import { useAuthStore } from "@/stores/UserStore";
-
-    import UsernameChange from "@/components/Dashboard/UsernameChange.vue";
-
     const authStore = useAuthStore();
 </script>
