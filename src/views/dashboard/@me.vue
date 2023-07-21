@@ -23,7 +23,7 @@
 
             <div class="flex flex-col gap-2 mt-5">
                 <a-input-group compact class="w-full">
-                    <a-input v-model:value="value19" style="width: calc(100% - 56px)" placeholder="Link to social media profile" />
+                    <a-input v-model:value="value19" style="width: calc(100% - 60px);" placeholder="Link to social media profile"/>
                     <a-button type="primary">Add</a-button>
                 </a-input-group>
                 

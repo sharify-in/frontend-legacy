@@ -1,7 +1,7 @@
 <template>
-    <div class="flex flex-col gap-3">
-       <div class="flex justify-between gap-5">
-           <a-card title="Password" class="w-1/3">
+    <div class="flex flex-col gap-3 flex-wrap">
+       <div class="flex justify-between gap-5 flex-wrap">
+           <a-card title="Password" >
                 <a-input-password class="m-1" placeholder="Current Password" />
                 <a-input-password class="m-1"  placeholder="New Password" />
                 <a-input-password class="m-1"  placeholder="Confirm Password" />
@@ -14,13 +14,15 @@
                 </div>
             </a-card>
 
-            <a-card title="2 Factor Authentication" class="w-1/3">                
-                <a-button type="primary" class="w-full">Enable 2FA</a-button>
-            </a-card>
+            <div class="flex flex-col grow gap-5">
+                <a-card title="2 Factor Authentication">                
+                    <a-button type="primary" class="w-full">Enable 2FA</a-button>
+                </a-card>
 
-            <a-card title="Your Data" class="w-1/3">                
-                <a-button type="primary" class="w-full">Request Data</a-button>
-            </a-card>
+                <a-card title="Your Data">                
+                    <a-button type="primary" class="w-full">Request Data</a-button>
+                </a-card>
+            </div>
        </div>
    </div>  
 

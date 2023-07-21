@@ -1,5 +1,7 @@
 <template>
     <div>
+        <a-progress class="w-11/12 h-0 pt-1 mb-10" :percent="storage_percentage" status="exception" size="small" :format="percent => `${percent}% of Storage used`" />
+
         <a-card>
             <div class="flex flex-row flex-wrap gap-5">
                 <a-input-search
@@ -21,6 +23,32 @@
                 ></a-select>
             </div>
         </a-card>
+    
+        <a-alert
+            v-show="storage_percentage>=90 && (storage_percentage != 100)"
+            message="Storage almost full"
+            type="warning"
+            show-icon
+            class="my-5"
+        >
+            <template #description>
+                <p>Your storage space is low. You can <a href="/dashboard/premium" class="font-bold hover:text-white">upgrade</a> to get more.</p> 
+            </template>
+        </a-alert>
+
+        <a-alert
+            v-show="storage_percentage == 100"
+            message="Account storage is full"
+            type="error"
+            show-icon
+            class="my-5"
+        >
+            <template #description>
+                <p>You've used all of your storage space. You can <a href="/dashboard/premium" class="font-bold hover:text-white">upgrade</a> to get more.</p> 
+            </template>
+        </a-alert>
+
+        
 
         <div class="flex flex-row flex-wrap gap-2 mt-5 mb-40 justify-center">
 
@@ -212,7 +240,7 @@ import fileSpreadsheet from '/src/assets/img/fileSpreadsheet.png';
 import fileCode from '/src/assets/img/fileCode.png';
 import fileAudio from '/src/assets/img/fileAudio.png';
 
-
+const storage_percentage = 97;
 
 // SEARCH
 const onSearchValue = ref<string>('');
