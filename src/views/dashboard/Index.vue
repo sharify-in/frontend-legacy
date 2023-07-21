@@ -107,7 +107,7 @@
 Introduction
           </pre>
           <a-dropdown-button>
-            Popular Guides
+            View all guides
             <template #overlay>
               <a-menu @click="handleMenuClick">
                 <a-menu-item key="1">
