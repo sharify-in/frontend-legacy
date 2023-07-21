@@ -113,8 +113,8 @@ const login = async () => {
 
 <style scoped>
 .p-password> :global(input) {
-  border-top-left-radius: 0px !important;
-  border-bottom-left-radius: 0px !important;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
 }
 
 .p-inputgroup-addon {
