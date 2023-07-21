@@ -22,11 +22,11 @@
             </div>
         </a-card>
 
-        <div class="flex flex-row flex-wrap gap-5 mt-5 mb-40">
+        <div class="flex flex-row flex-wrap gap-2 mt-5 mb-40 justify-center">
 
-            <a-card class="w-1/4">
+            <a-card class=" w-96">
                 <template #cover>    
-                    <img src="https://xello.blue/usercontent/YJBAjnPOcb.png" >
+                    <a-image src="https://xello.blue/usercontent/YJBAjnPOcb.png" />
                 </template>
 
                 <a-card-meta title="NVIDIA Capture - ijdrg6.png">
@@ -37,9 +37,22 @@
                 </a-card-meta>
             </a-card>
 
-            <a-card class="w-1/4">
+            <a-card class=" w-96">
                 <template #cover>    
-                    <img :src="fileIcon" >
+                    <img :src="fileUniversal" class="p-24">
+                </template>
+
+                <a-card-meta title="golf.ball">
+                    <template #description>
+                        <a href="">rjOAjgrk.ball</a>
+                        <a-button type="primary" class="mx-3" danger>Delete</a-button>
+                    </template>
+                </a-card-meta>
+            </a-card>
+
+            <a-card class=" w-96">
+                <template #cover>    
+                    <img :src="fileZip" class="p-24">
                 </template>
 
                 <a-card-meta title="Leaked pentagon documents.zip">
@@ -50,22 +63,156 @@
                 </a-card-meta>
             </a-card>
 
+            <a-card class=" w-96">
+                <template #cover>    
+                    <img :src="fileRar" class="p-24">
+                </template>
+
+                <a-card-meta title="Leaked FSB documents.rar">
+                    <template #description>
+                        <a href="">rjOAjgrk.rar</a>
+                        <a-button type="primary" class="mx-3" danger>Delete</a-button>
+                    </template>
+                </a-card-meta>
+            </a-card>
+
+            <a-card class=" w-96">
+                <template #cover>    
+                    <img :src="fileDB" class="p-24">
+                </template>
+
+                <a-card-meta title="Discord users (breached).db">
+                    <template #description>
+                        <a href="">rjOAjgrk.rar</a>
+                        <a-button type="primary" class="mx-3" danger>Delete</a-button>
+                    </template>
+                </a-card-meta>
+            </a-card>
+
+            <a-card class=" w-96">
+                <template #cover>    
+                    <img :src="fileDocument" class="p-24">
+                </template>
+
+                <a-card-meta title="Vault7.docx">
+                    <template #description>
+                        <a href="">rjOAjgrk.docx</a>
+                        <a-button type="primary" class="mx-3" danger>Delete</a-button>
+                    </template>
+                </a-card-meta>
+            </a-card>
+
+            <a-card class=" w-96">
+                <template #cover>    
+                    <img :src="fileExe" class="p-24">
+                </template>
+
+                <a-card-meta title="Free robux.exe">
+                    <template #description>
+                        <a href="">rjOAjgrk.exe</a>
+                        <a-button type="primary" class="mx-3" danger>Delete</a-button>
+                    </template>
+                </a-card-meta>
+            </a-card>
+            
+            <a-card class=" w-96">
+                <template #cover>    
+                    <img :src="filePDF" class="p-24">
+                </template>
+
+                <a-card-meta title="Russian spyware usage.pdf">
+                    <template #description>
+                        <a href="">rjOAjgrk.exe</a>
+                        <a-button type="primary" class="mx-3" danger>Delete</a-button>
+                    </template>
+                </a-card-meta>
+            </a-card>
+                        
+            <a-card class=" w-96">
+                <template #cover>    
+                    <img :src="filePowerpoint" class="p-24">
+                </template>
+
+                <a-card-meta title="Why sharify is the best.pptx">
+                    <template #description>
+                        <a href="">rjOAjgrk.exe</a>
+                        <a-button type="primary" class="mx-3" danger>Delete</a-button>
+                    </template>
+                </a-card-meta>
+            </a-card>
+
+            <a-card class=" w-96">
+                <template #cover>    
+                    <img :src="fileSpreadsheet" class="p-24">
+                </template>
+
+                <a-card-meta title="Doordash - tax report.xls">
+                    <template #description>
+                        <a href="">rjOAjgrk.exe</a>
+                        <a-button type="primary" class="mx-3" danger>Delete</a-button>
+                    </template>
+                </a-card-meta>
+            </a-card>
+
+            <a-card class=" w-96">
+                <template #cover>    
+                    <img :src="fileCode" class="p-24">
+                </template>
+
+                <a-card-meta title="GTA6_movementmanager.cs">
+                    <template #description>
+                        <a href="">rjOAjgrk.exe</a>
+                        <a-button type="primary" class="mx-3" danger>Delete</a-button>
+                    </template>
+                </a-card-meta>
+            </a-card>
+
+            <a-card class=" w-96">
+                <template #cover>    
+                    <img :src="fileAudio" class="p-24">
+                </template>
+
+                <a-card-meta title="GTA6 Loading theme.mp3">
+                    <template #description>
+                        <a href="">rjOAjgrk.exe</a>
+                        <a-button type="primary" class="mx-3" danger>Delete</a-button>
+                    </template>
+                </a-card-meta>
+            </a-card>
+
+            
+
+            
+            
+
+            
+
+            
+
+            
+
         </div>
 
-
-        <div class="absolute z-10 bottom-2 left-1/2 bg-[#141414] p-2 rounded-lg border border-[#3f3f3f] hover:border-accent duration-300" style="transform: translate(-50%, 0%);">
-            <a-pagination v-model:current="currentPage" :total="200" size="small" class="w-full"/>
-        </div>
     </div>
 </template>
+
+
 <script lang="ts" setup>
 import { ref } from 'vue';
 import type { SelectProps } from 'ant-design-vue';
-import fileIcon from "/src/assets/img/file.png";
+import fileUniversal from '/src/assets/img/fileUniversal.png';
+import fileZip from '/src/assets/img/fileZip.png';
+import fileRar from '/src/assets/img/fileRar.png';
+import fileDB from '/src/assets/img/fileDB.png';
+import fileDocument from '/src/assets/img/fileDocument.png';
+import fileExe from '/src/assets/img/fileExe.png';
+import filePDF from '/src/assets/img/filePDF.png';
+import filePowerpoint from '/src/assets/img/filePowerpoint.png';
+import fileSpreadsheet from '/src/assets/img/fileSpreadsheet.png';
+import fileCode from '/src/assets/img/fileCode.png';
+import fileAudio from '/src/assets/img/fileAudio.png';
 
 
-//PAGES
-const currentPage = ref(6);
 
 // SEARCH
 const onSearchValue = ref<string>('');
