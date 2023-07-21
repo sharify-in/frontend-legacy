@@ -25,12 +25,12 @@ const code = ref(route.query.code)
 
 onMounted(async () => {
   if (!code.value) {
-    await router.push({name: "home"});
+    router.push({ name: "home" });
   }
 
   await axios
     .get("/auth/confirm_email", { params: { code: route.query.code } })
-    .then(() => {
+    .then((res) => {
       toast.add({
         severity: "success",
         summary: "Success!",
