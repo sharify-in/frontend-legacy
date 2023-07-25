@@ -48,6 +48,68 @@
                     <a href="/link-to-upload-guide" class="opacity-80 hover:text-accent hover:opacity-100 duration-250">Learn how to upload files using 3rd party applications</a>
                 </p>
             </a-card>
+
+            <a-card title="Embed Preview">
+                <a-tabs v-model:activeKey="activeKey" class=" w-80" style="min-height: 24rem;">
+                    <a-tab-pane key="1" tab="Discord">
+                        <div class="bg-[#2b2d31] rounded-md p-3" :style="{
+                                'border-left': '5px solid '+embedColor
+                            }">
+                                <p class="font-bold">{{embedAuthor}}</p>
+                                <p class="text-[#00a8fc] font-bold hover:underline" >{{embedTitle}}</p>
+                                <p>{{embedDescription}}</p>
+                                <font-awesome-icon :icon="['fas', 'image']" class=" text-9xl m-5" />
+                            </div>
+                    </a-tab-pane>
+
+                    <a-tab-pane key="2" tab="Telegram">
+                        <div class=" bg-[#2b5378] p-3 rounded-lg">
+                            <h1 class="text-[#4ba5ff] hover:underline cursor-pointer">https://sharify.in/file</h1>
+                            <div class=" m-3 p-2 border-l-2 border-l-[#65bbf4]">
+                                <p class="text-[#90cbff] hover:underline cursor-pointer font-bold">sharify.in</p>
+                                <p class="text-[#cac8c4] font-bold">{{embedTitle}}</p>
+                                <p class="text-[#cac8c4]">{{embedDescription}}</p>
+                                <font-awesome-icon :icon="['fas', 'image']" class="text-5xl m-10" />
+                            </div>
+                        </div>
+                    </a-tab-pane>
+
+                    <a-tab-pane key="3" tab="Twitter">
+                        <div class="bg-[#101010] rounded-2xl border border-[#525a5e] flex flex-row flex-nowrap">
+                            <font-awesome-icon :icon="['fas', 'newspaper']" class="p-8 text-3xl rounded-l-2xl text-[#71767b] border-r border-[#525a5e] bg-[#16181c]"/>
+                            <div class=" self-center p-2">
+                                <p class="text-sm text-[#6f767b]">sharify.in</p>
+                                <p>{{embedTitle}}</p>
+                                <p class="text-sm text-[#6f767b]">{{embedDescription}}</p>
+                            </div>
+                        </div>
+                    </a-tab-pane>
+                </a-tabs>
+            </a-card>
+
+            <a-card title="Embed Settings" class="grow">
+                <div class="flex flex-row flex-wrap gap-5">
+                    <div class="w-64">
+                        <h1 class="font-bold">Title</h1>
+                        <a-input :placeholder="embedTitle"></a-input>
+                    </div>
+                    <div class="w-96">
+                        <h1 class="font-bold">Description</h1>
+                        <a-input :placeholder="embedDescription"></a-input>
+                    </div>
+                    <div class="w-10">
+                        <h1 class="font-bold">Color</h1>
+                        <ColorPicker format="hex" is-widget />
+                    </div>
+
+                    <div class="grow">
+                        <a-button type="primary" class="w-full my-1">Save</a-button>
+                        
+                    </div>
+                </div>
+
+                
+            </a-card>
         </div>
     </div>
 </template>
@@ -67,6 +129,14 @@ dayjs.extend(relativeTime);
 const authStore = useAuthStore();
 const statsStore = useStatsStore();
 
+//EMBED
+
+const embedColor = "#ff0080";
+const embedDescription = "Hi! I use Sharify to manage my files"
+const embedTitle = "Sharify"
+const embedAuthor = "Author"
+
+//------
 
 async function refreshKey() {
   await axios

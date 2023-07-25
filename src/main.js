@@ -17,6 +17,9 @@ import "primevue/resources/primevue.min.css";
 import "primeicons/primeicons.css";
 import "./assets/theme.css";
 
+import Vue3ColorPicker from "vue3-colorpicker";
+import "vue3-colorpicker/style.css";
+
 /* import font awesome */
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
@@ -57,6 +60,7 @@ import {
   faCloud,
   faCloudBolt,
   faTornado,
+  faNewspaper
 } from "@fortawesome/free-solid-svg-icons";
 
 import {
@@ -114,7 +118,8 @@ library.add(
   faFacebook,
   faTiktok,
   faGithub,
-  faTwitch
+  faTwitch,
+  faNewspaper
 );
 
 const app = createApp(App);
@@ -126,5 +131,6 @@ app.use(ToastService);
 app.use(VueAnimXyz);
 app.use(PrimeVue);
 app.use(router);
+app.use(Vue3ColorPicker);
 
 app.mount("#app");
