@@ -49,8 +49,8 @@
                 </p>
             </a-card>
 
-            <a-card title="Embed Preview">
-                <a-tabs v-model:activeKey="activeKey" class=" w-80" style="min-height: 24rem;">
+            <a-card title="Embed Preview" class="select-none">
+                <a-tabs v-model:activeKey="activeKey" class="flex items-center w-80" style="min-height: 24rem;">
                     <a-tab-pane key="1" tab="Discord">
                         <div class="bg-[#2b2d31] rounded-md p-3" :style="{
                                 'border-left': '5px solid '+embedColor
@@ -80,7 +80,7 @@
                             <div class=" self-center p-2">
                                 <p class="text-sm text-[#6f767b]">sharify.in</p>
                                 <p>{{embedTitle}}</p>
-                                <p class="text-sm text-[#6f767b]">{{embedDescription}}</p>
+                                <p class="text-sm text-[#6f767b] h-5 overflow-hidden">{{embedDescription}}</p>
                             </div>
                         </div>
                     </a-tab-pane>
@@ -104,9 +104,22 @@
 
                     <div class="grow">
                         <a-button type="primary" class="w-full my-1">Save</a-button>
-                        
+                        <a-button type="primary" class="w-full my-1"  @click="toggleEmbeds">
+                            {{ !embedEnabled ? 'Enable Embeds' : 'Disable Embeds' }}
+                        </a-button>
                     </div>
                 </div>
+                <div class="flex flex-row flex-wrap gap-5">
+                    <div class="w-64">
+                        <h1 class="font-bold">Author Name</h1>
+                        <a-input :placeholder="embedAuthor"></a-input>
+                    </div>
+                    <div class="w-96">
+                        <h1 class="font-bold">Author URL</h1>
+                        <a-input :placeholder="embedAuthorURL"></a-input>
+                    </div>
+                </div>
+                
 
                 
             </a-card>
@@ -135,6 +148,11 @@ const embedColor = "#ff0080";
 const embedDescription = "Hi! I use Sharify to manage my files"
 const embedTitle = "Sharify"
 const embedAuthor = "Author"
+const embedAuthorURL = "https://sharify.in/"
+
+const toggleEmbeds = () => {
+  embedEnabled.value = !embedEnabled.value;
+};
 
 //------
 
