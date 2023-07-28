@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-row gap-3">
+    <div class="flex flex-row gap-3 justify-center">
         <a-card title="Profile" class="w-1/2">
             <div class="flex flex-col items-center w-full h-full">
                 <a-avatar :src="avatarUrl" :size="{ xs: 24, sm: 32, md: 40, lg: 64, xl: 80, xxl: 100 }" />

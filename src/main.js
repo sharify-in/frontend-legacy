@@ -60,7 +60,8 @@ import {
   faCloud,
   faCloudBolt,
   faTornado,
-  faNewspaper
+  faNewspaper,
+  faRotateLeft
 } from "@fortawesome/free-solid-svg-icons";
 
 import {
@@ -119,7 +120,8 @@ library.add(
   faTiktok,
   faGithub,
   faTwitch,
-  faNewspaper
+  faNewspaper,
+  faRotateLeft
 );
 
 const app = createApp(App);
