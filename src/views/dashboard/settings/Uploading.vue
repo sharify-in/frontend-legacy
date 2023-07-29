@@ -119,9 +119,19 @@
                         <a-input :placeholder="embedAuthorURL"></a-input>
                     </div>
                 </div>
-                
+            </a-card>
+        </div>
 
-                
+        <div class="flex flex-row flex-wrap gap-3">
+            <a-card title="Domain" >
+                <a-input-group compact class="flex flex-row flex-nowrap items-center">
+                    <a-input :placeholder="subdomain" style="width: 10rem !important;"></a-input>
+                    <a-select :placeholder="domain" class=" w-56">
+                        <a-select-option value="sharify.in">sharify.in</a-select-option>
+                        <a-select-option value="xello.blue">xello.blue</a-select-option>
+                    </a-select>
+                    <a-button type="primary">Save</a-button>
+                </a-input-group>
             </a-card>
         </div>
     </div>
@@ -141,6 +151,11 @@ dayjs.extend(relativeTime);
 
 const authStore = useAuthStore();
 const statsStore = useStatsStore();
+
+//DOMAINS
+
+const subdomain = "yourdad"
+const domain = "sharify.in"
 
 //EMBED
 
