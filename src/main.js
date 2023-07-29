@@ -61,7 +61,9 @@ import {
   faCloudBolt,
   faTornado,
   faNewspaper,
-  faRotateLeft
+  faRotateLeft,
+  faHashtag,
+  faFolderOpen
 } from "@fortawesome/free-solid-svg-icons";
 
 import {
@@ -121,7 +123,9 @@ library.add(
   faGithub,
   faTwitch,
   faNewspaper,
-  faRotateLeft
+  faRotateLeft,
+  faHashtag,
+  faFolderOpen
 );
 
 const app = createApp(App);
