@@ -12,7 +12,7 @@
         <div class="w-96 mx-10 my-20">
             <a-divider></a-divider>
 
-            <ol class=" list-decimal">
+            <ol class="mx-10 list-decimal">
                 <li> <a href="#a" class="text-accent">Use of ervice</a> </li>
                 <ul class="list-disc ml-2">
                     <li> <a href="#a1" class="text-accent">User account</a> </li>
