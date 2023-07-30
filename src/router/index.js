@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from "vue-router";
 
 import BlankLayout from "../layouts/Blank.vue";
 import DashboardLayout from "../layouts/Dashboard.vue";
+import BasicLayout from "../layouts/Basic.vue";
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -113,6 +115,25 @@ const router = createRouter({
         layout: DashboardLayout,
       },
     },
+    {
+        path: "/terms",
+        name: "termsofservice",
+        component: () => import("../views/ToS.vue"),
+        meta: {
+            title: "Terms of Service - Sharify.in",
+            layout: BasicLayout
+        }
+    },
+    {
+        path: "/privacy",
+        name: "privacypolicy",
+        component: () => import("../views/Privacy.vue"),
+        meta: {
+            title: "Privacy Policy - Sharify.in",
+            layout: BasicLayout
+        }
+    },
+    
   ],
 });
 

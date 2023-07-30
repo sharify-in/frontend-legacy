@@ -1,0 +1,7 @@
+User-agent: sharifybot
+Disallow: 
+
+User-agent: *
+Allow: /
+
+Sitemap: https://sharify.in/sitemap.xml

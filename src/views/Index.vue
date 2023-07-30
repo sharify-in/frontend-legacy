@@ -98,7 +98,7 @@
     </div>
   </div>
 
-  <Footer />
+  <Footer class="mt-24" />
 </template>
 
 <script setup>
