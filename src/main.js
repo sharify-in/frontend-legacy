@@ -63,7 +63,9 @@ import {
   faNewspaper,
   faRotateLeft,
   faHashtag,
-  faFolderOpen
+  faFolderOpen,
+  faEyeSlash,
+  faUserGroup
 } from "@fortawesome/free-solid-svg-icons";
 
 import {
@@ -125,7 +127,9 @@ library.add(
   faNewspaper,
   faRotateLeft,
   faHashtag,
-  faFolderOpen
+  faFolderOpen,
+  faEyeSlash,
+  faUserGroup
 );
 
 const app = createApp(App);

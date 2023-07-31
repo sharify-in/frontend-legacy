@@ -7,10 +7,9 @@
             </a>
 
             <div class="flex gap-5 flex-wrap">
-                <a href="#" class="text-center hover:underline">Products</a>
-                <a href="#about" class="text-center hover:underline">About Us</a>
+                <a href="/" class="text-center hover:underline">Features</a>
+                <a href="/dashboard/premium" class="text-center hover:underline">Premium</a>
                 <a href="https://dsc.gg/sharify" class="text-center hover:underline">Community</a>
-                <a href="/pricing" class="text-center hover:underline mr-3">Pricing</a>
             </div>
         </div>   
         

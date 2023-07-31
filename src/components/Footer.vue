@@ -4,7 +4,7 @@
         <div class="mb-10">
             <a href="/" class="text-4xl font-bold text-accent">SHARIFY</a>
             <div class="text-2xl">
-                <a href="https://discord.gg/suJhf3RG87" class="opacity-70 hover:opacity-100 duration-200">
+                <a href="https://dsc.gg/sharify" class="opacity-70 hover:opacity-100 duration-200">
                     <font-awesome-icon :icon="['fab', 'discord']"/>
                 </a>
             </div>
@@ -18,13 +18,13 @@
             <h1 class="uppercase text-2xl text-accent font-bold">get started</h1>
             <a href="/register" class="hover:opacity-80 duration-300">Create an account</a><br>
             <a href="/login" class="hover:opacity-80 duration-300">Log in</a><br>
-            <a href="/discord" class="hover:opacity-80 duration-300">Community</a>
+            <a href="https://dsc.gg/sharify" class="hover:opacity-80 duration-300">Community</a>
             </div>
 
             <div class="m-6 text-md">
             <h1 class="uppercase text-2xl text-accent font-bold">resources</h1>
+            <a href="/dashboard/premium" class="hover:opacity-80 duration-300">Premium</a><br>
             <a href="/faq" class="hover:opacity-80 duration-300">FAQ</a><br>
-            <a href="/pricing" class="hover:opacity-80 duration-300">Pricing</a><br>
             <a href="/status" class="hover:opacity-80 duration-300">Status</a><br>
             </div>
 

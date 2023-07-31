@@ -8,10 +8,10 @@
           Sharify
         </h1>
 
-        <a href="#" class="text-center self-center hover:underline">Products</a>
-        <a href="#about" class="text-center self-center hover:underline">About Us</a>
-        <a href="https://dsc.gg/sharify" class="text-center self-center hover:underline">Community</a>
-        <a href="/pricing" class="text-center self-center hover:underline mr-3">Pricing</a>
+        <a href="#why" class="text-center self-center hover:opacity-80 duration-300">Why Us</a>
+        <a href="#features" class="text-center self-center hover:opacity-80 duration-300">Features</a>
+        <a href="https://dsc.gg/sharify" class="text-center self-center hover:opacity-80 duration-300">Community</a>
+        <a href="/dashboard/premium" class="text-center self-center hover:opacity-80 duration-300 mr-3">Premium</a>
       </div>
     </nav>
   </XyzTransition>
@@ -58,35 +58,75 @@
 
   <div class="px-14">
     <div class="flex flex-col items-center text-center pt-14">
-      <h1 class="text-4xl font-semibold uppercase text-accent">
-        Setting the Bar Higher
-      </h1>
-      <p class="text-1xl text-dim-accent">
-        How do we set ourselves apart from typical file hosting platforms
-      </p>
+        <h1 class="text-4xl font-semibold uppercase text-accent" id="features">
+            Why us
+        </h1>
+        <p class="text-1xl text-dim-accent">
+            How do we set ourselves apart from typical file storing platforms
+        </p>
 
-      <XyzTransitionGroup
-        class="item-group flex flex-col md:flex-row items-stretch flex-wrap justify-center gap-5 px-14 xl:px-60 mt-14"
-        appear xyz="fade stagger-1.5 right-100% out-back duration-10 delay-8">
-        <Feature v-if="true" icon="fa-solid fa-gears" title="Customization"
-          description="With your customization features, You are able to change domain, embed and so much more" />
-        <Feature v-if="true" icon="fa-solid fa-credit-card" title="Affordable"
-          description="Unlike traditional file hosts, we offer affordable pricing alongside our free solution" />
-        <Feature v-if="true" icon="fa-solid fa-link" title="Connections"
-          description="Add your friends or colleagues to your friendlist to share your files with them in a matter of a few clicks" />
-      </XyzTransitionGroup>
+            <XyzTransitionGroup
+                class="item-group flex flex-col md:flex-row items-stretch flex-wrap justify-center gap-5 px-14 xl:px-60 mt-14"
+                appear xyz="fade stagger-1.5 right-100% out-back duration-10 delay-8">
+                <Feature v-if="true" icon="fa-solid fa-gears" title="Customization"
+                description="With our customization features, You are able to change domain, appearance of files and much more." />
+                <Feature v-if="true" icon="fa-solid fa-credit-card" title="Affordable"
+                description="Unlike traditional file hosts, we offer affordable pricing alongside our free solution." />
+                <Feature v-if="true" icon="fa-solid fa-eye-slash" title="Privacy Focused"
+                description="We don't spy on our users and we make sure personal data is kept safe." />
+            </XyzTransitionGroup>
+        </div>
     </div>
 
-    <Divider />
+    <div class="my-16 bg-background" style="height: 1px;"></div>
+
+    
+    <div class="px-14">
+        <div class="flex flex-col items-center text-center pt-14">
+        <h1 class="text-4xl font-semibold uppercase text-accent" id="why">
+            Features
+        </h1>
+        <p class="text-1xl text-dim-accent">
+            The features that are making your life easier
+        </p>
+
+        <XyzTransitionGroup
+            class="item-group flex flex-col md:flex-row items-stretch flex-wrap justify-center gap-5 px-14 xl:px-60 mt-14"
+            appear xyz="fade stagger-1.5 right-100% out-back duration-10 delay-8">
+            
+            <Feature v-if="true"
+                icon="fa-solid fa-user-group"
+                title="Connections"
+                description="Add people you know and share files between each other with a click of a button"
+            />
+            
+            <Feature v-if="true"
+                icon="fa-solid fa-image"
+                title="Screenshots"
+                description="Take a screenshot, upload it by using ShareX, iOS Shortcut or other applications and get a link within seconds"
+            />
+
+            <Feature v-if="true"
+                icon="fa-solid fa-link"
+                title="Domains"
+                description="Select which domain you want to use when sharing a link to a file"
+            />
+
+            
+            
+        </XyzTransitionGroup>
+    </div>
+
+    <div class="my-16 bg-background" style="height: 1px;"></div>
+
 
     <div class="flex flex-col items-center text-center pt-14">
       <h1 class="text-4xl font-semibold uppercase text-accent">
-        Our statistics don't lie
+        Statistics
       </h1>
       <p class="text-1xl text-dim-accent">
         It's not just a simple service, It's an entire community!
       </p>
-      <p class="text-1xl text-dim-accent">*cached for one hour</p>
 
       <div class="flex flex-col md:flex-row items-stretch flex-wrap justify-center gap-5 px-14 mt-14 xl:px-60 w-full">
         <Statistic icon="fa-solid fa-users" title="Users" :number="stats.users" :loading="request.loading" :error="request.error" />
@@ -100,6 +140,12 @@
 
   <Footer class="mt-24" />
 </template>
+
+<style>
+html,body {
+    scroll-behavior: smooth;
+}
+</style>
 
 <script setup>
 import { onMounted, reactive, ref } from "vue";
