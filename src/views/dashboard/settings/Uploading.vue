@@ -1,5 +1,10 @@
 <template>
   <div class="flex flex-col flex-wrap gap-3">
+    <a-alert
+      message="This page will get redesigned (i promise)"
+      type="warning"
+      show-icon
+    />
     <div class="flex flex-row flex-wrap gap-3">
       <a-card class="w-2/3 grow" title="API Key">
         <div class="border rounded-lg p-2">
@@ -55,7 +60,7 @@
 
       <a-card class="select-none" title="Embed Preview">
         <a-tabs class="flex items-center w-80" style="min-height: 24rem">
-          <a-tab-pane tab="Discord">
+          <a-tab-pane key="1" tab="Discord">
             <div
               :style="{
                 'border-left': '5px solid ' + embedColor,
@@ -74,7 +79,7 @@
             </div>
           </a-tab-pane>
 
-          <a-tab-pane tab="Telegram">
+          <a-tab-pane key="2" tab="Telegram">
             <div class="bg-[#2b5378] p-3 rounded-lg">
               <h1 class="text-[#4ba5ff] hover:underline cursor-pointer">
                 https://sharify.in/file
@@ -95,7 +100,7 @@
             </div>
           </a-tab-pane>
 
-          <a-tab-pane tab="Twitter">
+          <a-tab-pane key="3" tab="Twitter">
             <div
               class="bg-[#101010] rounded-2xl border border-[#525a5e] flex flex-row flex-nowrap"
             >

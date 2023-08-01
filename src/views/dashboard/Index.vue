@@ -1,12 +1,10 @@
 <template>
   <div class="flex flex-col gap-3">
     <a-alert
-      v-show="!warn_dismissed"
       message="Warning"
-      description="This is a very early release. Expect bugs or missing features."
+      description="This is a very early release. Expect bugs or missing features. (deadline forced us to release it earlier)"
       type="warning"
       show-icon
-      closable
     />
     <div class="flex flex-wrap md:flex-nowrap justify-between gap-5">
       <a-card title="API Key" class="w-full">
