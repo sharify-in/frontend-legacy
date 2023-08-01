@@ -28,70 +28,70 @@
         maxlength="250"
       />
 
-      <div class="flex flex-col gap-2 mt-5">
-        <a-input-group compact class="w-full">
-          <a-input
-            v-model:value="value19"
-            style="width: calc(100% - 60px)"
-            placeholder="Link to social media profile"
-          />
-          <a-button type="primary">Add</a-button>
-        </a-input-group>
+      <!--      <div class="flex flex-col gap-2 mt-5">-->
+      <!--        <a-input-group compact class="w-full">-->
+      <!--          <a-input-->
+      <!--            v-model:value="value19"-->
+      <!--            style="width: calc(100% - 60px)"-->
+      <!--            placeholder="Link to social media profile"-->
+      <!--          />-->
+      <!--          <a-button type="primary">Add</a-button>-->
+      <!--        </a-input-group>-->
 
-        <div>
-          <font-awesome-icon
-            :icon="['fab', 'youtube']"
-            class="text-lg px-3 w-5"
-          />
-          <a-input value="@sharify" class="w-52" />
-        </div>
-        <div>
-          <font-awesome-icon
-            :icon="['fab', 'instagram']"
-            class="text-lg px-3 w-5"
-          />
-          <a-input value="@sharify" class="w-52" />
-        </div>
-        <div>
-          <font-awesome-icon
-            :icon="['fab', 'tiktok']"
-            class="text-lg px-3 w-5"
-          />
-          <a-input value="@sharify" class="w-52" />
-        </div>
-        <div>
-          <font-awesome-icon
-            :icon="['fab', 'twitter']"
-            class="text-lg px-3 w-5"
-          />
-          <a-input value="@sharify" class="w-52" />
-        </div>
-        <div>
-          <font-awesome-icon
-            :icon="['fab', 'twitch']"
-            class="text-lg px-3 w-5"
-          />
-          <a-input value="@sharify" class="w-52" />
-        </div>
-        <div>
-          <font-awesome-icon
-            :icon="['fab', 'discord']"
-            class="text-lg px-3 w-5"
-          />
-          <a-input value="@sharify" class="w-52" />
-        </div>
-        <div>
-          <font-awesome-icon
-            :icon="['fab', 'github']"
-            class="text-lg px-3 w-5"
-          />
-          <a-input value="sharify-in" class="w-52" />
-        </div>
-        <div>
-          <font-awesome-icon :icon="['fas', 'link']" class="text-lg px-3 w-5" />
-          <a-input value="https://sharify.in/u/@system" class="w-52" />
-        </div>
-      </div>
+      <!--        <div>-->
+      <!--          <font-awesome-icon-->
+      <!--            :icon="['fab', 'youtube']"-->
+      <!--            class="text-lg px-3 w-5"-->
+      <!--          />-->
+      <!--          <a-input value="@sharify" class="w-52" />-->
+      <!--        </div>-->
+      <!--        <div>-->
+      <!--          <font-awesome-icon-->
+      <!--            :icon="['fab', 'instagram']"-->
+      <!--            class="text-lg px-3 w-5"-->
+      <!--          />-->
+      <!--          <a-input value="@sharify" class="w-52" />-->
+      <!--        </div>-->
+      <!--        <div>-->
+      <!--          <font-awesome-icon-->
+      <!--            :icon="['fab', 'tiktok']"-->
+      <!--            class="text-lg px-3 w-5"-->
+      <!--          />-->
+      <!--          <a-input value="@sharify" class="w-52" />-->
+      <!--        </div>-->
+      <!--        <div>-->
+      <!--          <font-awesome-icon-->
+      <!--            :icon="['fab', 'twitter']"-->
+      <!--            class="text-lg px-3 w-5"-->
+      <!--          />-->
+      <!--          <a-input value="@sharify" class="w-52" />-->
+      <!--        </div>-->
+      <!--        <div>-->
+      <!--          <font-awesome-icon-->
+      <!--            :icon="['fab', 'twitch']"-->
+      <!--            class="text-lg px-3 w-5"-->
+      <!--          />-->
+      <!--          <a-input value="@sharify" class="w-52" />-->
+      <!--        </div>-->
+      <!--        <div>-->
+      <!--          <font-awesome-icon-->
+      <!--            :icon="['fab', 'discord']"-->
+      <!--            class="text-lg px-3 w-5"-->
+      <!--          />-->
+      <!--          <a-input value="@sharify" class="w-52" />-->
+      <!--        </div>-->
+      <!--        <div>-->
+      <!--          <font-awesome-icon-->
+      <!--            :icon="['fab', 'github']"-->
+      <!--            class="text-lg px-3 w-5"-->
+      <!--          />-->
+      <!--          <a-input value="sharify-in" class="w-52" />-->
+      <!--        </div>-->
+      <!--        <div>-->
+      <!--          <font-awesome-icon :icon="['fas', 'link']" class="text-lg px-3 w-5" />-->
+      <!--          <a-input value="https://sharify.in/u/@system" class="w-52" />-->
+      <!--        </div>-->
+      <!--      </div>-->
     </a-card>
   </div>
 </template>
