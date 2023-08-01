@@ -1,15 +1,13 @@
 <template>
-    <div class="p-1 text-base rounded-md bg-pink-100 select-none">
-        <p class=" font-semibold text-pink-500"><font-awesome-icon :icon="['fas', 'moon']" />  Early User</p>
-    </div>
+  <div class="p-1 text-base rounded-md bg-pink-100 select-none">
+    <p class="font-semibold text-pink-500">
+      <font-awesome-icon :icon="['fas', 'moon']" /> Early User
+    </p>
+  </div>
 </template>
 
 <script>
-    export default {
-        
-    }
+export default {};
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

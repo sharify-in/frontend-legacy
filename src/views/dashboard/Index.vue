@@ -7,7 +7,7 @@
       type="warning"
       show-icon
       closable
-      />
+    />
     <div class="flex flex-wrap md:flex-nowrap justify-between gap-5">
       <a-card title="API Key" class="w-full">
         <div class="border rounded-lg p-2">
@@ -99,7 +99,7 @@
         :tab-position="tabPosition"
         animated
       >
-      <!-- TODO: refactor: use api endpoint and v-each -->
+        <!-- TODO: refactor: use api endpoint and v-each -->
 
         <!-- INTRUDUCTION -->
         <a-tab-pane key="1" tab="Guides">
@@ -193,7 +193,6 @@ dayjs.extend(relativeTime);
 const authStore = useAuthStore();
 const statsStore = useStatsStore();
 
-
 async function refreshKey() {
   await axios
     .post("/user/@me/refresh_key")
@@ -214,7 +213,6 @@ async function refreshKey() {
       });
     });
 }
-
 
 function copyKey() {
   navigator.clipboard.writeText(authStore.user.token);

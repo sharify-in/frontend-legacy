@@ -1,6 +1,7 @@
 <template>
   <div
-    class="flex flex-col justify-center items-center min-w-screen min-h-screen bg-[url('../svg/background.svg')] bg-no-repeat bg-cover p-5">
+    class="flex flex-col justify-center items-center min-w-screen min-h-screen bg-[url('../svg/background.svg')] bg-no-repeat bg-cover p-5"
+  >
     <XyzTransition appear xyz="fade down duration-10 delay-1.5">
       <Card v-if="true" class="flex flex-col items-center w-full md:w-96">
         <template #title>
@@ -14,7 +15,11 @@
                   <font-awesome-icon :icon="['fas', 'user']" />
                 </span>
                 <span class="p-float-label">
-                  <InputText id="username" class="p-inputtext-lg" v-model="form.username" />
+                  <InputText
+                    id="username"
+                    class="p-inputtext-lg"
+                    v-model="form.username"
+                  />
                   <label for="username">Username/Email</label>
                 </span>
               </div>
@@ -23,14 +28,25 @@
                   <font-awesome-icon :icon="['fas', 'lock']" />
                 </span>
                 <span class="p-float-label">
-                  <Password v-model="form.password" class="p-inputtext-lg" inputId="password" :feedback="false"
-                    type="password" />
+                  <Password
+                    v-model="form.password"
+                    class="p-inputtext-lg"
+                    inputId="password"
+                    :feedback="false"
+                    type="password"
+                  />
                   <label for="password">Password</label>
                 </span>
               </div>
-              <Button type="submit" iconPos="right" :loading="loginRequest.loading">
+              <Button
+                type="submit"
+                iconPos="right"
+                :loading="loginRequest.loading"
+              >
                 <div class="flex justify-center items-center w-full">
-                  <font-awesome-icon icon="fa-solid fa-arrow-right-to-bracket" />
+                  <font-awesome-icon
+                    icon="fa-solid fa-arrow-right-to-bracket"
+                  />
                   <span class="px-2">Sign In</span>
                 </div>
               </Button>
@@ -52,7 +68,7 @@ import axios from "axios";
 
 const toast = useToast();
 
-const authStore= useAuthStore()
+const authStore = useAuthStore();
 
 onMounted(async () => {
   await authStore.getUser();
@@ -74,45 +90,52 @@ const loginRequest = reactive({
   loading: false,
 });
 const login = async () => {
-  loginRequest.loading = true
-  await axios.post("/auth/login", form).then((res) => {
-    toast.add({ severity: 'success', summary: 'Success!', detail: `Welcome ${res.data.user.username}`, life: 3000 });
-    return router.push({ name: "dashboard" })
-  }).catch((err) => {
-    const furry = err.response.data
+  loginRequest.loading = true;
+  await axios
+    .post("/auth/login", form)
+    .then((res) => {
+      toast.add({
+        severity: "success",
+        summary: "Success!",
+        detail: `Welcome ${res.data.user.username}`,
+        life: 3000,
+      });
+      return router.push({ name: "dashboard" });
+    })
+    .catch((err) => {
+      const furry = err.response.data;
 
-    if (furry.errors) {
-      loginRequest.loading = false
-      return toast.add({
-        severity: "error",
-        summary: "Validation Error",
-        detail: furry.errors[0].message,
-        life: 3000
-      })
-    } else if (furry.error && furry.message) {
-      loginRequest.loading = false
-      return toast.add({
-        severity: "error",
-        summary: "Sign in Failed",
-        detail: furry.message,
-        life: 3000
-      })
-    } else {
-      loginRequest.loading = false
-      return toast.add({
-        severity: "error",
-        summary: "Sign in failed",
-        detail: "Unknown error occurred, Please try again later",
-        life: 3000
-      })
-    }
-
-  });
+      if (furry.errors) {
+        loginRequest.loading = false;
+        return toast.add({
+          severity: "error",
+          summary: "Validation Error",
+          detail: furry.errors[0].message,
+          life: 3000,
+        });
+      } else if (furry.error && furry.message) {
+        loginRequest.loading = false;
+        return toast.add({
+          severity: "error",
+          summary: "Sign in Failed",
+          detail: furry.message,
+          life: 3000,
+        });
+      } else {
+        loginRequest.loading = false;
+        return toast.add({
+          severity: "error",
+          summary: "Sign in failed",
+          detail: "Unknown error occurred, Please try again later",
+          life: 3000,
+        });
+      }
+    });
 };
 </script>
 
 <style scoped>
-.p-password> :global(input) {
+.p-password > :global(input) {
   border-top-left-radius: 0px !important;
   border-bottom-left-radius: 0px !important;
 }

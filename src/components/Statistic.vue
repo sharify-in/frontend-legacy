@@ -1,7 +1,10 @@
 <template>
   <Card
-    class="min-w-[25%] flex-1 md:basis-80 hover:scale-105 hover:shadow-xl hover:shadow-almost-black duration-150 delay-75">
-    <template #title> <font-awesome-icon :icon="props.icon" /> {{ title }} </template>
+    class="min-w-[25%] flex-1 md:basis-80 hover:scale-105 hover:shadow-xl hover:shadow-almost-black duration-150 delay-75"
+  >
+    <template #title>
+      <font-awesome-icon :icon="props.icon" /> {{ title }}
+    </template>
     <template v-if="!props.loading & !props.error" #content>
       <p v-if="string">
         {{ props.number }}
@@ -18,16 +21,15 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from "vue"
-import CountUp from 'vue-countup-v3'
+import { onMounted, ref } from "vue";
+import CountUp from "vue-countup-v3";
 
-const props = defineProps(["icon", "title", "number", "loading", "error"])
+const props = defineProps(["icon", "title", "number", "loading", "error"]);
 
 let string = ref(false);
 onMounted(() => {
   if (typeof props.number === "string") {
-    string.value = true
+    string.value = true;
   }
-})
-
+});
 </script>

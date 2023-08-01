@@ -20,8 +20,7 @@ import axios from "axios";
 
 const toast = useToast();
 const route = useRoute();
-const code = ref(route.query.code)
-
+const code = ref(route.query.code);
 
 onMounted(async () => {
   if (!code.value) {

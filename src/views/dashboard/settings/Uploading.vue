@@ -1,140 +1,171 @@
 <template>
-    <div class="flex flex-col flex-wrap gap-3">
-        <div class="flex flex-row flex-wrap gap-3">
-            <a-card title="API Key" class="w-2/3 grow">
-                <div class="border rounded-lg p-2">
+  <div class="flex flex-col flex-wrap gap-3">
+    <div class="flex flex-row flex-wrap gap-3">
+      <a-card class="w-2/3 grow" title="API Key">
+        <div class="border rounded-lg p-2">
+          <p
+            class="blur hover:blur-none transition-all duration-300 break-words"
+          >
+            {{ authStore.user.token }}
+          </p>
+        </div>
+        <div class="flex flex-wrap md:flex-nowrap gap-5 mt-5">
+          <a-popconfirm
+            cancel-text="No"
+            ok-text="Yes"
+            placement="topLeft"
+            @confirm="refreshKey()"
+          >
+            <template #title>
+              <p>Are you sure you want to refresh your API Key?</p>
+            </template>
+            <a-button class="w-full" danger type="primary">
+              <font-awesome-icon class="mr-1" icon="arrows-rotate" />
+              Refresh API Key
+            </a-button>
+          </a-popconfirm>
+          <a-button class="w-full" type="primary" @click="copyKey()">
+            <font-awesome-icon class="mr-1" icon="fa-solid fa-copy" />
+            Copy API Key
+          </a-button>
+        </div>
+      </a-card>
+
+      <a-card class="w-1/4 grow" title="Upload Configuration">
+        <a-dropdown>
+          <template #overlay>
+            <a-menu class="border-[#213b5b] border">
+              <a-menu-item key="1">ShareX</a-menu-item>
+              <a-menu-item key="2">iOS Shortcut</a-menu-item>
+            </a-menu>
+          </template>
+          <a-button class="w-full" type="primary">
+            <font-awesome-icon :icon="['fas', 'download']" class="mr-1" />
+            Get Config
+          </a-button>
+        </a-dropdown>
+        <p class="text-center mt-3">
+          <a
+            class="opacity-80 hover:text-accent hover:opacity-100 duration-250"
+            href="/link-to-upload-guide"
+            >Learn how to upload files using 3rd party applications</a
+          >
+        </p>
+      </a-card>
+
+      <a-card class="select-none" title="Embed Preview">
+        <a-tabs class="flex items-center w-80" style="min-height: 24rem">
+          <a-tab-pane tab="Discord">
+            <div
+              :style="{
+                'border-left': '5px solid ' + embedColor,
+              }"
+              class="bg-[#2b2d31] rounded-md p-3"
+            >
+              <p class="font-bold">{{ embedAuthor }}</p>
+              <p class="text-[#00a8fc] font-bold hover:underline">
+                {{ embedTitle }}
+              </p>
+              <p>{{ embedDescription }}</p>
+              <font-awesome-icon
+                :icon="['fas', 'image']"
+                class="text-9xl m-5"
+              />
+            </div>
+          </a-tab-pane>
+
+          <a-tab-pane tab="Telegram">
+            <div class="bg-[#2b5378] p-3 rounded-lg">
+              <h1 class="text-[#4ba5ff] hover:underline cursor-pointer">
+                https://sharify.in/file
+              </h1>
+              <div class="m-3 p-2 border-l-2 border-l-[#65bbf4]">
                 <p
-                    class="blur hover:blur-none transition-all duration-300 break-words"
+                  class="text-[#90cbff] hover:underline cursor-pointer font-bold"
                 >
-                    {{ authStore.user.token }}
+                  sharify.in
                 </p>
-                </div>
-                <div class="flex flex-wrap md:flex-nowrap gap-5 mt-5">
-                <a-popconfirm
-                    placement="topLeft"
-                    ok-text="Yes"
-                    cancel-text="No"
-                    @confirm="refreshKey()"
-                >
-                    <template #title>
-                    <p>Are you sure you want to refresh your API Key?</p>
-                    </template>
-                    <a-button type="primary" danger class="w-full">
-                    <font-awesome-icon icon="arrows-rotate" class="mr-1" />
-                    Refresh API Key
-                    </a-button>
-                </a-popconfirm>
-                <a-button type="primary" class="w-full" @click="copyKey()">
-                    <font-awesome-icon icon="fa-solid fa-copy" class="mr-1" />
-                    Copy API Key
-                </a-button>
-                </div>
-            </a-card>
+                <p class="text-[#cac8c4] font-bold">{{ embedTitle }}</p>
+                <p class="text-[#cac8c4]">{{ embedDescription }}</p>
+                <font-awesome-icon
+                  :icon="['fas', 'image']"
+                  class="text-5xl m-10"
+                />
+              </div>
+            </div>
+          </a-tab-pane>
 
-            <a-card title="Upload Configuration" class="w-1/4 grow">
-                <a-dropdown>
-                    <template #overlay>
-                        <a-menu class="border-[#213b5b] border">
-                        <a-menu-item key="1">ShareX</a-menu-item>
-                        <a-menu-item key="2">iOS Shortcut</a-menu-item>
-                        </a-menu>
-                    </template>
-                    <a-button type="primary" class="w-full">
-                        <font-awesome-icon :icon="['fas', 'download']" class="mr-1" />
-                        Get Config
-                    </a-button>
-                </a-dropdown>
-                <p class=" text-center mt-3">
-                    <a href="/link-to-upload-guide" class="opacity-80 hover:text-accent hover:opacity-100 duration-250">Learn how to upload files using 3rd party applications</a>
+          <a-tab-pane tab="Twitter">
+            <div
+              class="bg-[#101010] rounded-2xl border border-[#525a5e] flex flex-row flex-nowrap"
+            >
+              <font-awesome-icon
+                :icon="['fas', 'newspaper']"
+                class="p-8 text-3xl rounded-l-2xl text-[#71767b] border-r border-[#525a5e] bg-[#16181c]"
+              />
+              <div class="self-center p-2">
+                <p class="text-sm text-[#6f767b]">sharify.in</p>
+                <p>{{ embedTitle }}</p>
+                <p class="text-sm text-[#6f767b] h-5 overflow-hidden">
+                  {{ embedDescription }}
                 </p>
-            </a-card>
+              </div>
+            </div>
+          </a-tab-pane>
+        </a-tabs>
+      </a-card>
 
-            <a-card title="Embed Preview" class="select-none">
-                <a-tabs v-model:activeKey="activeKey" class="flex items-center w-80" style="min-height: 24rem;">
-                    <a-tab-pane key="1" tab="Discord">
-                        <div class="bg-[#2b2d31] rounded-md p-3" :style="{
-                                'border-left': '5px solid '+embedColor
-                            }">
-                                <p class="font-bold">{{embedAuthor}}</p>
-                                <p class="text-[#00a8fc] font-bold hover:underline" >{{embedTitle}}</p>
-                                <p>{{embedDescription}}</p>
-                                <font-awesome-icon :icon="['fas', 'image']" class=" text-9xl m-5" />
-                            </div>
-                    </a-tab-pane>
+      <a-card class="grow" title="Embed Settings">
+        <div class="flex flex-row flex-wrap gap-5">
+          <div class="w-64">
+            <h1 class="font-bold">Title</h1>
+            <a-input :placeholder="embedTitle"></a-input>
+          </div>
+          <div class="w-96">
+            <h1 class="font-bold">Description</h1>
+            <a-input :placeholder="embedDescription"></a-input>
+          </div>
+          <div class="w-10">
+            <h1 class="font-bold">Color</h1>
+            <ColorPicker format="hex" is-widget />
+          </div>
 
-                    <a-tab-pane key="2" tab="Telegram">
-                        <div class=" bg-[#2b5378] p-3 rounded-lg">
-                            <h1 class="text-[#4ba5ff] hover:underline cursor-pointer">https://sharify.in/file</h1>
-                            <div class=" m-3 p-2 border-l-2 border-l-[#65bbf4]">
-                                <p class="text-[#90cbff] hover:underline cursor-pointer font-bold">sharify.in</p>
-                                <p class="text-[#cac8c4] font-bold">{{embedTitle}}</p>
-                                <p class="text-[#cac8c4]">{{embedDescription}}</p>
-                                <font-awesome-icon :icon="['fas', 'image']" class="text-5xl m-10" />
-                            </div>
-                        </div>
-                    </a-tab-pane>
-
-                    <a-tab-pane key="3" tab="Twitter">
-                        <div class="bg-[#101010] rounded-2xl border border-[#525a5e] flex flex-row flex-nowrap">
-                            <font-awesome-icon :icon="['fas', 'newspaper']" class="p-8 text-3xl rounded-l-2xl text-[#71767b] border-r border-[#525a5e] bg-[#16181c]"/>
-                            <div class=" self-center p-2">
-                                <p class="text-sm text-[#6f767b]">sharify.in</p>
-                                <p>{{embedTitle}}</p>
-                                <p class="text-sm text-[#6f767b] h-5 overflow-hidden">{{embedDescription}}</p>
-                            </div>
-                        </div>
-                    </a-tab-pane>
-                </a-tabs>
-            </a-card>
-
-            <a-card title="Embed Settings" class="grow">
-                <div class="flex flex-row flex-wrap gap-5">
-                    <div class="w-64">
-                        <h1 class="font-bold">Title</h1>
-                        <a-input :placeholder="embedTitle"></a-input>
-                    </div>
-                    <div class="w-96">
-                        <h1 class="font-bold">Description</h1>
-                        <a-input :placeholder="embedDescription"></a-input>
-                    </div>
-                    <div class="w-10">
-                        <h1 class="font-bold">Color</h1>
-                        <ColorPicker format="hex" is-widget />
-                    </div>
-
-                    <div class="grow">
-                        <a-button type="primary" class="w-full my-1">Save</a-button>
-                        <a-button type="primary" class="w-full my-1"  @click="toggleEmbeds">
-                            {{ !embedEnabled ? 'Enable Embeds' : 'Disable Embeds' }}
-                        </a-button>
-                    </div>
-                </div>
-                <div class="flex flex-row flex-wrap gap-5">
-                    <div class="w-64">
-                        <h1 class="font-bold">Author Name</h1>
-                        <a-input :placeholder="embedAuthor"></a-input>
-                    </div>
-                    <div class="w-96">
-                        <h1 class="font-bold">Author URL</h1>
-                        <a-input :placeholder="embedAuthorURL"></a-input>
-                    </div>
-                </div>
-            </a-card>
+          <div class="grow">
+            <a-button class="w-full my-1" type="primary">Save</a-button>
+            <a-button class="w-full my-1" type="primary" @click="toggleEmbeds">
+              {{ !embedEnabled ? "Enable Embeds" : "Disable Embeds" }}
+            </a-button>
+          </div>
         </div>
-
-        <div class="flex flex-row flex-wrap gap-3">
-            <a-card title="Domain" >
-                <a-input-group compact class="flex flex-row flex-nowrap items-center">
-                    <a-input :placeholder="subdomain" style="width: 10rem !important;"></a-input>
-                    <a-select :placeholder="domain" class=" w-56">
-                        <a-select-option value="sharify.in">sharify.in</a-select-option>
-                        <a-select-option value="xello.blue">xello.blue</a-select-option>
-                    </a-select>
-                    <a-button type="primary">Save</a-button>
-                </a-input-group>
-            </a-card>
+        <div class="flex flex-row flex-wrap gap-5">
+          <div class="w-64">
+            <h1 class="font-bold">Author Name</h1>
+            <a-input :placeholder="embedAuthor"></a-input>
+          </div>
+          <div class="w-96">
+            <h1 class="font-bold">Author URL</h1>
+            <a-input :placeholder="embedAuthorURL"></a-input>
+          </div>
         </div>
+      </a-card>
     </div>
+
+    <div class="flex flex-row flex-wrap gap-3">
+      <a-card title="Domain">
+        <a-input-group class="flex flex-row flex-nowrap items-center" compact>
+          <a-input
+            :placeholder="subdomain"
+            style="width: 10rem !important"
+          ></a-input>
+          <a-select :placeholder="domain" class="w-56">
+            <a-select-option value="sharify.in">sharify.in</a-select-option>
+            <a-select-option value="xello.blue">xello.blue</a-select-option>
+          </a-select>
+          <a-button type="primary">Save</a-button>
+        </a-input-group>
+      </a-card>
+    </div>
+  </div>
 </template>
 
 <script setup>
@@ -154,16 +185,16 @@ const statsStore = useStatsStore();
 
 //DOMAINS
 
-const subdomain = "yourdad"
-const domain = "sharify.in"
+const subdomain = "yourdad";
+const domain = "sharify.in";
 
 //EMBED
 
 const embedColor = "#ff0080";
-const embedDescription = "Hi! I use Sharify to manage my files"
-const embedTitle = "Sharify"
-const embedAuthor = "Author"
-const embedAuthorURL = "https://sharify.in/"
+const embedDescription = "Hi! I use Sharify to manage my files";
+const embedTitle = "Sharify";
+const embedAuthor = "Author";
+const embedAuthorURL = "https://sharify.in/";
 
 const toggleEmbeds = () => {
   embedEnabled.value = !embedEnabled.value;
@@ -191,7 +222,6 @@ async function refreshKey() {
       });
     });
 }
-
 
 function copyKey() {
   navigator.clipboard.writeText(authStore.user.token);

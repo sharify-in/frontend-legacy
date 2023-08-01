@@ -65,18 +65,18 @@ import {
   faHashtag,
   faFolderOpen,
   faEyeSlash,
-  faUserGroup
+  faUserGroup,
 } from "@fortawesome/free-solid-svg-icons";
 
 import {
-    faDiscord,
-    faYoutube,
-    faTwitter,
-    faInstagram,
-    faFacebook,
-    faTiktok,
-    faGithub,
-    faTwitch
+  faDiscord,
+  faYoutube,
+  faTwitter,
+  faInstagram,
+  faFacebook,
+  faTiktok,
+  faGithub,
+  faTwitch,
 } from "@fortawesome/free-brands-svg-icons";
 
 library.add(
@@ -129,7 +129,7 @@ library.add(
   faHashtag,
   faFolderOpen,
   faEyeSlash,
-  faUserGroup
+  faUserGroup,
 );
 
 const app = createApp(App);

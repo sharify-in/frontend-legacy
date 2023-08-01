@@ -1,5 +1,5 @@
 <template>
-  <Toast/>
+  <Toast />
   <component :is="$route.meta.layout">
     <RouterView />
   </component>
@@ -7,9 +7,9 @@
 
 <script setup>
 import { RouterView } from "vue-router";
-import Toast from 'primevue/toast';
+import Toast from "primevue/toast";
 </script>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap");
 </style>

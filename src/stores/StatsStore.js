@@ -18,7 +18,7 @@ export const useStatsStore = defineStore("stats", {
         .get("/stats")
         .then((response) => {
           this.hostStats = response.data;
-          this.requestLoading = false
+          this.requestLoading = false;
         })
         .catch((err) => {
           this.requestLoading = false;
