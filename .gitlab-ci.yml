@@ -12,14 +12,16 @@ format:
 
     # Check if there are any changes after formatting
     - CHANGED_FILES=$(git status --porcelain)
-    - if [ -z "$CHANGED_FILES" ]; then
+    - |
+     if [ -z "$CHANGED_FILES" ]; then
         echo "No changes were made by Prettier. Skipping commit.";
       else
-        git config --global user.email "ci@example.com"
-        git config --global user.name "CI/CD"
+        git config --global user.email "prettier@sharify.in"
+        git config --global user.name "Prettier"
         git add .
         git commit -m "Auto-format code with Prettier [skip ci]"
         git push origin $CI_COMMIT_REF_NAME  # Push changes to the branch
+      fi
   only:
     - branches    # Run on all branches (default behavior for 'only' when not specified)
   except:
