@@ -2,10 +2,6 @@
   <div>
     <p class="text-xl font-bold select-none">
       sharify.in
-      <a
-        class="text-sm mx-1 p-1 px-3 bg-amber-100 text-amber-500 rounded-full hover:text-amber-500"
-        >BETA</a
-      >
       <a-tag v-if="statsStore.stats.state.beta" color="orange">Beta</a-tag>
     </p>
   </div>
