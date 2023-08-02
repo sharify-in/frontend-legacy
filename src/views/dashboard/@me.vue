@@ -11,14 +11,14 @@
           {{ authStore.user.id }}
         </p>
         <div class="flex flex-wrap justify-center gap-3 p-5">
-          <Owner />
-          <Admin />
-          <Moderator />
-          <Staff />
-          <Beta />
-          <Contributor />
-          <EarlyUser />
-          <Premium />
+          <Owner v-show="authStore.user.role === 'OWNER'" />
+          <Admin v-show="authStore.user.role === 'ADMIN'" />
+          <Moderator v-show="authStore.user.role === 'MODERATOR'" />
+          <Staff v-show="authStore.user.isAdmin" />
+          <Beta v-show="authStore.user.beta" />
+          <!--          <Contributor />-->
+          <!--          <EarlyUser />-->
+          <Premium v-show="authStore.user.subscription.type" />
         </div>
       </div>
       <a-divider orientation="left" class="text-sm">About Me</a-divider>
