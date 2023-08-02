@@ -9,32 +9,32 @@
   >
     <a-menu-item key="dashboard">
       <template #icon>
-        <home-outlined />
+        <font-awesome-icon :icon="['fas', 'house']" />
       </template>
       Home
     </a-menu-item>
     <a-menu-item key="dashboard_user">
       <template #icon>
-        <user-outlined />
+        <font-awesome-icon :icon="['fas', 'user']" />
       </template>
       User
     </a-menu-item>
     <a-sub-menu key="dashboard_settings">
       <template #icon>
-        <setting-outlined />
+        <font-awesome-icon :icon="['fas', 'gear']" />
       </template>
       <template #title>
         <span>Settings</span>
       </template>
       <a-menu-item key="dashboard_account">
         <template #icon>
-          <user-outlined />
+          <font-awesome-icon :icon="['fas', 'user']" />
         </template>
         Account
       </a-menu-item>
       <a-menu-item key="dashboard_privacy">
         <template #icon>
-          <eye-outlined />
+          <font-awesome-icon :icon="['fas', 'eye']" />
         </template>
         Privacy
       </a-menu-item>
@@ -66,32 +66,9 @@
   </a-menu>
 </template>
 <script setup>
-import { ref, defineComponent } from "vue";
-import {
-  HomeOutlined,
-  UserOutlined,
-  SettingOutlined,
-  EyeOutlined,
-  UploadOutlined,
-  PictureOutlined,
-  CloudServerOutlined,
-  StarOutlined,
-} from "@ant-design/icons-vue";
+import { ref } from "vue";
 import { useAuthStore } from "@/stores/UserStore";
 import router from "@/router";
-
-defineComponent({
-  components: {
-    HomeOutlined,
-    UserOutlined,
-    SettingOutlined,
-    EyeOutlined,
-    UploadOutlined,
-    PictureOutlined,
-    CloudServerOutlined,
-    StarOutlined,
-  },
-});
 
 const authStore = useAuthStore();
 

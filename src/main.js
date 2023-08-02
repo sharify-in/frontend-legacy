@@ -66,6 +66,7 @@ import {
   faFolderOpen,
   faEyeSlash,
   faUserGroup,
+  faEye,
 } from "@fortawesome/free-solid-svg-icons";
 
 import {
@@ -91,6 +92,7 @@ library.add(
   faUpload,
   faTicket,
   faUsers,
+  faHouse,
   faGears,
   faGlobe,
   faHouse,
@@ -100,6 +102,7 @@ library.add(
   faUser,
   faLock,
   faBan,
+  faEye,
   faGem,
   faDoorOpen,
   faGear,
