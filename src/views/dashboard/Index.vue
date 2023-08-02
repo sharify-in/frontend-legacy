@@ -90,72 +90,71 @@
       </div>
     </a-card>
 
-    <!-- <a-card title="Guides"> -->
-    <a-card>
-      <a-tabs
-        v-model:activeKey="activeKey"
-        :tab-position="tabPosition"
-        animated
-      >
-        <!-- TODO: refactor: use api endpoint and v-each -->
+    <!--    <a-card>-->
+    <!--      <a-tabs-->
+    <!--        v-model:activeKey="activeKey"-->
+    <!--        :tab-position="tabPosition"-->
+    <!--        animated-->
+    <!--      >-->
+    <!--        &lt;!&ndash; TODO: refactor: use api endpoint and v-each &ndash;&gt;-->
 
-        <!-- INTRUDUCTION -->
-        <a-tab-pane key="1" tab="Guides">
-          <pre class="font-sans">
-Introduction
-          </pre>
-          <a-dropdown-button>
-            View all guides
-            <template #overlay>
-              <a-menu @click="handleMenuClick">
-                <a-menu-item key="1">
-                  <UserOutlined />1st tutorial
-                </a-menu-item>
-                <a-menu-item key="2">
-                  <UserOutlined />2nd tutorial
-                </a-menu-item>
-                <a-menu-item key="3">
-                  <UserOutlined />3rd tutorial
-                </a-menu-item>
-                <a-menu-item key="4">
-                  <UserOutlined />4th tutorial
-                </a-menu-item>
-                <a-menu-item key="5">
-                  <UserOutlined />5th tutorial
-                </a-menu-item>
-              </a-menu>
-            </template>
-            <template #icon
-              ><font-awesome-icon :icon="['fas', 'bars']"
-            /></template>
-          </a-dropdown-button>
-        </a-tab-pane>
+    <!--        &lt;!&ndash; INTRUDUCTION &ndash;&gt;-->
+    <!--        <a-tab-pane key="1" tab="Guides">-->
+    <!--          <pre class="font-sans">-->
+    <!--Introduction-->
+    <!--          </pre>-->
+    <!--          <a-dropdown-button>-->
+    <!--            View all guides-->
+    <!--            <template #overlay>-->
+    <!--              <a-menu @click="handleMenuClick">-->
+    <!--                <a-menu-item key="1">-->
+    <!--                  <UserOutlined />1st tutorial-->
+    <!--                </a-menu-item>-->
+    <!--                <a-menu-item key="2">-->
+    <!--                  <UserOutlined />2nd tutorial-->
+    <!--                </a-menu-item>-->
+    <!--                <a-menu-item key="3">-->
+    <!--                  <UserOutlined />3rd tutorial-->
+    <!--                </a-menu-item>-->
+    <!--                <a-menu-item key="4">-->
+    <!--                  <UserOutlined />4th tutorial-->
+    <!--                </a-menu-item>-->
+    <!--                <a-menu-item key="5">-->
+    <!--                  <UserOutlined />5th tutorial-->
+    <!--                </a-menu-item>-->
+    <!--              </a-menu>-->
+    <!--            </template>-->
+    <!--            <template #icon-->
+    <!--              ><font-awesome-icon :icon="['fas', 'bars']"-->
+    <!--            /></template>-->
+    <!--          </a-dropdown-button>-->
+    <!--        </a-tab-pane>-->
 
-        <!-- ˇGUIDE 1 -->
-        <a-tab-pane key="2" tab="Pinned tutorial">
-          <pre class="font-sans">
-              Lorem ipsum gugu gaga bla bla kuchnu ti fotra 2
+    <!--        &lt;!&ndash; ˇGUIDE 1 &ndash;&gt;-->
+    <!--        <a-tab-pane key="2" tab="Pinned tutorial">-->
+    <!--          <pre class="font-sans">-->
+    <!--              Lorem ipsum gugu gaga bla bla kuchnu ti fotra 2-->
 
-              Guide on how to upload/use sharify
-              Shortened version (click 'learn more' to open tutorial)
-            </pre
-          >
-          <a-button>Learn More</a-button>
-        </a-tab-pane>
+    <!--              Guide on how to upload/use sharify-->
+    <!--              Shortened version (click 'learn more' to open tutorial)-->
+    <!--            </pre-->
+    <!--          >-->
+    <!--          <a-button>Learn More</a-button>-->
+    <!--        </a-tab-pane>-->
 
-        <!-- GUIDE 2 -->
-        <a-tab-pane key="3" tab="Tutorial 2">
-          <pre class="font-sans">
-            Lorem ipsum gugu gaga bla bla kuchnu ti fotra 2
+    <!--        &lt;!&ndash; GUIDE 2 &ndash;&gt;-->
+    <!--        <a-tab-pane key="3" tab="Tutorial 2">-->
+    <!--          <pre class="font-sans">-->
+    <!--            Lorem ipsum gugu gaga bla bla kuchnu ti fotra 2-->
 
-            Random guide
-            Shortened version (click 'learn more' to open tutorial)
-            </pre
-          >
-          <a-button>Learn More</a-button>
-        </a-tab-pane>
-      </a-tabs>
-    </a-card>
+    <!--            Random guide-->
+    <!--            Shortened version (click 'learn more' to open tutorial)-->
+    <!--            </pre-->
+    <!--          >-->
+    <!--          <a-button>Learn More</a-button>-->
+    <!--        </a-tab-pane>-->
+    <!--      </a-tabs>-->
+    <!--    </a-card>-->
 
     <div
       class="flex flex-col flex-wrap items-center md:flex-nowrap md:flex-row md:justify-center gap-5"
