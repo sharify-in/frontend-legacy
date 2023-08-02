@@ -72,9 +72,11 @@
       <div class="flex flex-row flex-wrap md:flex-nowrap gap-5 justify-between">
         <a-dropdown>
           <template #overlay>
-            <a-menu class="border-[#213b5b] border">
-              <a-menu-item key="1">ShareX</a-menu-item>
-              <a-menu-item key="2">iOS Shortcut</a-menu-item>
+            <a-menu @click="getConfig" class="border-[#213b5b] border">
+              <a-menu-item key="sharex">ShareX</a-menu-item>
+              <a-menu-item key="ios"
+                >IOS Shortcut (plz help we don't have an iphone)</a-menu-item
+              >
             </a-menu>
           </template>
           <a-button type="primary" class="w-full">
@@ -89,73 +91,6 @@
         </a-button>
       </div>
     </a-card>
-
-    <!--    <a-card>-->
-    <!--      <a-tabs-->
-    <!--        v-model:activeKey="activeKey"-->
-    <!--        :tab-position="tabPosition"-->
-    <!--        animated-->
-    <!--      >-->
-    <!--        &lt;!&ndash; TODO: refactor: use api endpoint and v-each &ndash;&gt;-->
-
-    <!--        &lt;!&ndash; INTRUDUCTION &ndash;&gt;-->
-    <!--        <a-tab-pane key="1" tab="Guides">-->
-    <!--          <pre class="font-sans">-->
-    <!--Introduction-->
-    <!--          </pre>-->
-    <!--          <a-dropdown-button>-->
-    <!--            View all guides-->
-    <!--            <template #overlay>-->
-    <!--              <a-menu @click="handleMenuClick">-->
-    <!--                <a-menu-item key="1">-->
-    <!--                  <UserOutlined />1st tutorial-->
-    <!--                </a-menu-item>-->
-    <!--                <a-menu-item key="2">-->
-    <!--                  <UserOutlined />2nd tutorial-->
-    <!--                </a-menu-item>-->
-    <!--                <a-menu-item key="3">-->
-    <!--                  <UserOutlined />3rd tutorial-->
-    <!--                </a-menu-item>-->
-    <!--                <a-menu-item key="4">-->
-    <!--                  <UserOutlined />4th tutorial-->
-    <!--                </a-menu-item>-->
-    <!--                <a-menu-item key="5">-->
-    <!--                  <UserOutlined />5th tutorial-->
-    <!--                </a-menu-item>-->
-    <!--              </a-menu>-->
-    <!--            </template>-->
-    <!--            <template #icon-->
-    <!--              ><font-awesome-icon :icon="['fas', 'bars']"-->
-    <!--            /></template>-->
-    <!--          </a-dropdown-button>-->
-    <!--        </a-tab-pane>-->
-
-    <!--        &lt;!&ndash; ˇGUIDE 1 &ndash;&gt;-->
-    <!--        <a-tab-pane key="2" tab="Pinned tutorial">-->
-    <!--          <pre class="font-sans">-->
-    <!--              Lorem ipsum gugu gaga bla bla kuchnu ti fotra 2-->
-
-    <!--              Guide on how to upload/use sharify-->
-    <!--              Shortened version (click 'learn more' to open tutorial)-->
-    <!--            </pre-->
-    <!--          >-->
-    <!--          <a-button>Learn More</a-button>-->
-    <!--        </a-tab-pane>-->
-
-    <!--        &lt;!&ndash; GUIDE 2 &ndash;&gt;-->
-    <!--        <a-tab-pane key="3" tab="Tutorial 2">-->
-    <!--          <pre class="font-sans">-->
-    <!--            Lorem ipsum gugu gaga bla bla kuchnu ti fotra 2-->
-
-    <!--            Random guide-->
-    <!--            Shortened version (click 'learn more' to open tutorial)-->
-    <!--            </pre-->
-    <!--          >-->
-    <!--          <a-button>Learn More</a-button>-->
-    <!--        </a-tab-pane>-->
-    <!--      </a-tabs>-->
-    <!--    </a-card>-->
-
     <div
       class="flex flex-col flex-wrap items-center md:flex-nowrap md:flex-row md:justify-center gap-5"
     >
@@ -216,6 +151,25 @@ function copyKey() {
   notification["success"]({
     message: "Success!",
     description: "Copied to clipboard!",
+  });
+}
+
+async function getConfig(type) {
+  axios({
+    url: "/user/@me/config", //your url
+    method: "GET",
+    responseType: "blob", // important
+  }).then((response) => {
+    const href = URL.createObjectURL(response.data);
+
+    const link = document.createElement("a");
+    link.href = href;
+    link.setAttribute("download", `sharify_${authStore.user.id}.sxcu`); //or any other extension
+    document.body.appendChild(link);
+    link.click();
+
+    document.body.removeChild(link);
+    URL.revokeObjectURL(href);
   });
 }
 </script>
