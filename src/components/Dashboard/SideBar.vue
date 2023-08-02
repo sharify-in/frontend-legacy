@@ -57,7 +57,7 @@
       </template>
       Premium
     </a-menu-item>
-    <a-menu-item key="dashboard_admin">
+    <a-menu-item v-if="authStore.user.isAdmin" key="dashboard_admin">
       <template #icon>
         <font-awesome-icon icon="fa-solid fa-user-shield" />
       </template>
