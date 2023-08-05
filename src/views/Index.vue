@@ -62,7 +62,7 @@
           <XyzTransition appear xyz="fade right-5 duration delay-5">
             <Button
               class="!hidden xl:!block w-80"
-              @click="this.$router.push({ name: 'register' })"
+              @click="router.push({ name: 'register' })"
               label="Get Started"
               severity="secondary"
               raised
@@ -78,7 +78,7 @@
             >
               <Button
                 class="shrink-0 grow"
-                @click="this.$router.push({ name: 'register' })"
+                @click="router.push({ name: 'register' })"
                 raised
               >
                 <font-awesome-icon :icon="['fas', 'user-plus']" />
@@ -86,7 +86,7 @@
               </Button>
               <Button
                 class="shrink-0 grow"
-                @click="this.$router.push({ name: 'login' })"
+                @click="router.push({ name: 'login' })"
                 outlined
               >
                 <font-awesome-icon icon="fa-solid fa-arrow-right-to-bracket" />
@@ -227,6 +227,7 @@ import axios from "axios";
 import Feature from "../components/Feature.vue";
 import Statistic from "../components/Statistic.vue";
 import TransparentLogo from "../assets/img/transparent.png";
+import router from "@/router";
 
 let request = reactive({
   loading: true,
