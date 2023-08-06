@@ -101,7 +101,7 @@
 
   <div class="px-14">
     <div class="flex flex-col items-center text-center pt-14">
-      <h1 class="text-4xl font-semibold uppercase text-accent" id="features">
+      <h1 class="text-4xl font-semibold uppercase text-accent" id="why">
         Why us
       </h1>
       <p class="text-1xl text-dim-accent">
@@ -139,7 +139,7 @@
 
   <div class="px-14">
     <div class="flex flex-col items-center text-center pt-14">
-      <h1 class="text-4xl font-semibold uppercase text-accent" id="why">
+      <h1 class="text-4xl font-semibold uppercase text-accent" id="features">
         Features
       </h1>
       <p class="text-1xl text-dim-accent">
