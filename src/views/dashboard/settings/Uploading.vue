@@ -1,10 +1,5 @@
 <template>
   <div class="flex flex-col flex-wrap gap-3">
-    <a-alert
-      message="This page will get redesigned (i promise)"
-      type="warning"
-      show-icon
-    />
     <div class="flex flex-row flex-wrap gap-3">
       <a-card class="w-2/3 grow" title="API Key">
         <div class="border rounded-lg p-2">
@@ -63,7 +58,7 @@
           <a-tab-pane key="1" tab="Discord">
             <div
               :style="{
-                'border-left': '5px solid ' + embedColor,
+                'border-left': '6px solid ' + embedColor,
               }"
               class="bg-[#2b2d31] rounded-md p-3"
             >
@@ -120,56 +115,50 @@
         </a-tabs>
       </a-card>
 
-      <a-card class="grow" title="Embed Settings">
-        <div class="flex flex-row flex-wrap gap-5">
-          <div class="w-64">
-            <h1 class="font-bold">Title</h1>
-            <a-input :placeholder="embedTitle"></a-input>
-          </div>
-          <div class="w-96">
-            <h1 class="font-bold">Description</h1>
-            <a-input :placeholder="embedDescription"></a-input>
-          </div>
-          <div class="w-10">
-            <h1 class="font-bold">Color</h1>
-            <ColorPicker format="hex" is-widget />
-          </div>
+      <div class="flex flex-col grow gap-3">
+        <a-card class="grow" title="Embed Settings">
+            <div
+              :style="{
+                'border-left': '6px solid ' + embedColor,
+              }"
+              class="bg-[#2b2d31] rounded-md p-3 w-96"
+            >
+                <a-input :placeholder="embedAuthor" size="small" class="w-44 m-1"></a-input>
+                <a-input :placeholder="embedAuthorURL" size="small" class="w-32 m-1"></a-input> <br>
+                
+                <a-input :placeholder="embedTitle" size="small" class="w-56 m-1"></a-input><br>
+                <a-textarea :placeholder="embedDescription" class="w-64 m-1"></a-textarea><br>
+                <font-awesome-icon
+                    :icon="['fas', 'image']"
+                    class="w-44 h-44 m-5"
+                /> <br>
+                <div class="flex flex-row flex-wrap gap-7">
+                    <ColorPicker />
+                    <span>
+                        <a-button class="rounded-r-none">Disable</a-button>
+                        <a-button type="primary" class="rounded-l-none">Save</a-button>
+                    </span>
+                </div>
+            </div>
+        </a-card>
 
-          <div class="grow">
-            <a-button class="w-full my-1" type="primary">Save</a-button>
-            <a-button class="w-full my-1" type="primary" @click="toggleEmbeds">
-              {{ !embedEnabled ? "Enable Embeds" : "Disable Embeds" }}
-            </a-button>
-          </div>
+        <a-card title="Domain">
+            <a-input-group class="flex flex-row flex-nowrap items-center" compact>
+            <a-input
+                :placeholder="subdomain"
+                style="width: 10rem !important"
+            ></a-input>
+            <a-select :placeholder="domain" class="w-56">
+                <a-select-option value="sharify.in">sharify.in</a-select-option>
+                <a-select-option value="xello.blue">xello.blue</a-select-option>
+            </a-select>
+            <a-button type="primary">Save</a-button>
+            </a-input-group>
+        </a-card>
         </div>
-        <div class="flex flex-row flex-wrap gap-5">
-          <div class="w-64">
-            <h1 class="font-bold">Author Name</h1>
-            <a-input :placeholder="embedAuthor"></a-input>
-          </div>
-          <div class="w-96">
-            <h1 class="font-bold">Author URL</h1>
-            <a-input :placeholder="embedAuthorURL"></a-input>
-          </div>
-        </div>
-      </a-card>
     </div>
 
-    <div class="flex flex-row flex-wrap gap-3">
-      <a-card title="Domain">
-        <a-input-group class="flex flex-row flex-nowrap items-center" compact>
-          <a-input
-            :placeholder="subdomain"
-            style="width: 10rem !important"
-          ></a-input>
-          <a-select :placeholder="domain" class="w-56">
-            <a-select-option value="sharify.in">sharify.in</a-select-option>
-            <a-select-option value="xello.blue">xello.blue</a-select-option>
-          </a-select>
-          <a-button type="primary">Save</a-button>
-        </a-input-group>
-      </a-card>
-    </div>
+    
   </div>
 </template>
 
@@ -200,10 +189,6 @@ const embedDescription = "Hi! I use Sharify to manage my files";
 const embedTitle = "Sharify";
 const embedAuthor = "Author";
 const embedAuthorURL = "https://sharify.in/";
-
-const toggleEmbeds = () => {
-  embedEnabled.value = !embedEnabled.value;
-};
 
 //------
 
