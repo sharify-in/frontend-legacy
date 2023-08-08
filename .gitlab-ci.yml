@@ -20,6 +20,7 @@ format:
         git config --global user.name "Prettier"
         git add .
         git commit -m "Auto-format code with Prettier [skip ci]"
+        echo "$CI_COMMIT_REF_NAME"
         git push origin $CI_COMMIT_REF_NAME # Push changes to the branch
       fi
   only:
