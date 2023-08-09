@@ -31,7 +31,7 @@
         </div>
       </a-card>
 
-      <a-card class="w-1/4 grow" title="Upload Configuration">
+      <a-card class=" w-1/4" title="Upload Configuration">
         <a-dropdown>
           <template #overlay>
             <a-menu class="border-[#213b5b] border">
@@ -55,26 +55,7 @@
 
       <a-card class="select-none" title="Embed Preview">
         <a-tabs class="flex items-center w-80" style="min-height: 24rem">
-          <a-tab-pane key="1" tab="Discord">
-            <div
-              :style="{
-                'border-left': '6px solid ' + embedColor,
-              }"
-              class="bg-[#2b2d31] rounded-md p-3"
-            >
-              <p class="font-bold">{{ embedAuthor }}</p>
-              <p class="text-[#00a8fc] font-bold hover:underline">
-                {{ embedTitle }}
-              </p>
-              <p>{{ embedDescription }}</p>
-              <font-awesome-icon
-                :icon="['fas', 'image']"
-                class="text-9xl m-5"
-              />
-            </div>
-          </a-tab-pane>
-
-          <a-tab-pane key="2" tab="Telegram">
+          <a-tab-pane key="1" tab="Telegram">
             <div class="bg-[#2b5378] p-3 rounded-lg">
               <h1 class="text-[#4ba5ff] hover:underline cursor-pointer">
                 https://sharify.in/file
@@ -92,6 +73,25 @@
                   class="text-5xl m-10"
                 />
               </div>
+            </div>
+          </a-tab-pane>
+
+          <a-tab-pane key="2" tab="Discord">
+            <div
+              :style="{
+                'border-left': '6px solid ' + embedColor,
+              }"
+              class="bg-[#2b2d31] rounded-md p-3"
+            >
+              <p class="font-bold">{{ embedAuthor }}</p>
+              <p class="text-[#00a8fc] font-bold hover:underline">
+                {{ embedTitle }}
+              </p>
+              <p>{{ embedDescription }}</p>
+              <font-awesome-icon
+                :icon="['fas', 'image']"
+                class="text-9xl m-5"
+              />
             </div>
           </a-tab-pane>
 
@@ -115,47 +115,53 @@
         </a-tabs>
       </a-card>
 
-      <div class="flex flex-col grow gap-3">
+      <!-- <div class="flex flex-col grow gap-3"> -->
         <a-card class="grow" title="Embed Settings">
-            <div
-              :style="{
-                'border-left': '6px solid ' + embedColor,
-              }"
-              class="bg-[#2b2d31] rounded-md p-3 w-96"
-            >
-                <a-input :placeholder="embedAuthor" size="small" class="w-44 m-1"></a-input>
-                <a-input :placeholder="embedAuthorURL" size="small" class="w-32 m-1"></a-input> <br>
-                
-                <a-input :placeholder="embedTitle" size="small" class="w-56 m-1"></a-input><br>
-                <a-textarea :placeholder="embedDescription" class="w-64 m-1"></a-textarea><br>
-                <font-awesome-icon
-                    :icon="['fas', 'image']"
-                    class="w-44 h-44 m-5"
-                /> <br>
-                <div class="flex flex-row flex-wrap gap-7">
-                    <ColorPicker />
-                    <span>
-                        <a-button class="rounded-r-none">Disable</a-button>
-                        <a-button type="primary" class="rounded-l-none">Save</a-button>
-                    </span>
+            <div class="flex flex-row items-center justify-center">
+                <div
+                :style="{
+                    'border-left': '6px solid ' + embedColor,
+                }"
+                class="bg-[#2b2d31] rounded-md p-3 w-96"
+                >
+                    <a-input :placeholder="embedAuthor" size="small" class="w-44 m-1"></a-input>
+                    <a-input :placeholder="embedAuthorURL" size="small" class="w-32 m-1"></a-input> <br>
+                    
+                    <a-input :placeholder="embedTitle" size="small" class="w-56 m-1"></a-input><br>
+                    <a-textarea :placeholder="embedDescription" class="w-64 m-1"></a-textarea><br>
+                    <font-awesome-icon
+                        :icon="['fas', 'image']"
+                        class="w-44 h-44 m-5"
+                    /> <br>
+                    <div class="flex flex-row flex-wrap gap-7">
+                        <ColorPicker />
+                        <span>
+                            <a-button class="rounded-r-none">Disable</a-button>
+                            <a-button type="primary" class="rounded-l-none">Save</a-button>
+                        </span>
+                    </div>
                 </div>
             </div>
         </a-card>
 
-        <a-card title="Domain">
-            <a-input-group class="flex flex-row flex-nowrap items-center" compact>
-            <a-input
-                :placeholder="subdomain"
-                style="width: 10rem !important"
-            ></a-input>
-            <a-select :placeholder="domain" class="w-56">
-                <a-select-option value="sharify.in">sharify.in</a-select-option>
-                <a-select-option value="xello.blue">xello.blue</a-select-option>
-            </a-select>
-            <a-button type="primary">Save</a-button>
-            </a-input-group>
-        </a-card>
+        <div class="flex flex-col flex-wrap gap-3 w-1/4">
+            <a-card title="Domain" class="h-1/3">
+                <div class="flex flex-row  items-center justify-center">
+                    <a-input-group class="flex flex-row flex-nowrap items-center" compact>
+                    <a-input
+                        :placeholder="subdomain"
+                        style="width: 7rem !important"
+                    ></a-input>
+                    <a-select :placeholder="domain" class="w-44">
+                        <a-select-option value="sharify.in">sharify.in</a-select-option>
+                        <a-select-option value="xello.blue">xello.blue</a-select-option>
+                    </a-select>
+                    <a-button type="primary">Save</a-button>
+                    </a-input-group>
+                </div>
+            </a-card>
         </div>
+        <!-- </div> -->
     </div>
 
     
