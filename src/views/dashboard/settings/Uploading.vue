@@ -125,7 +125,7 @@
                 class="bg-[#2b2d31] rounded-md p-3 w-96"
                 >
                     <a-input :placeholder="embedAuthor" size="small" class="w-44 m-1"></a-input>
-                    <a-input :placeholder="embedAuthorURL" size="small" class="w-32 m-1"></a-input> <br>
+                    <a-input :placeholder="embedProvider" size="small" class="w-32 m-1"></a-input> <br>
                     
                     <a-input :placeholder="embedTitle" size="small" class="w-56 m-1"></a-input><br>
                     <a-textarea :placeholder="embedDescription" class="w-64 m-1"></a-textarea><br>
@@ -190,11 +190,12 @@ const domain = "sharify.in";
 
 //EMBED
 
+const embedEnabled = true;
 const embedColor = "#ff0080";
 const embedDescription = "Hi! I use Sharify to manage my files";
 const embedTitle = "Sharify";
 const embedAuthor = "Author";
-const embedAuthorURL = "https://sharify.in/";
+const embedProvider = "Provider";
 
 //------
 
@@ -217,6 +218,22 @@ async function refreshKey() {
         description: "Something went wrong!",
       });
     });
+}
+
+async function updateEmbed() {
+    const postData = {
+        enabled: embedEnabled,
+        color: embedColor,
+        title: embedTitle,
+        description: embedDescription,
+        author: embedAuthor,
+        provider: embedProvider
+    }
+    await axios
+        .patch("/user/@me/settings", postData)
+        .then(async (res) => {
+
+        })
 }
 
 function copyKey() {
